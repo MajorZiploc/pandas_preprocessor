@@ -1,4 +1,4 @@
-data.connectionstring = "~/Downloads/PokeTypeMatchupData.csv"
+data.connectionstring = "data/PokeTypeMatchupData.csv"
 data.format = "csv"
 
 [[dataframe.inputs]]

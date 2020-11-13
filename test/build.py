@@ -3,9 +3,13 @@ import pandas as pd
 import toml
 from clean import *
 from encoders.index import encoder_selector
-
+import os
 
 config = toml.load("test/config.toml")
+
+this_dir = os.path.dirname(os.path.realpath(__file__))
+config['data']['connectionstring'] = os.path.join(this_dir,
+                                                  config['data']['connectionstring'])
 
 df = get_dataframe(config['data'])
 

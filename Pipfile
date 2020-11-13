@@ -9,6 +9,7 @@ pandas-preprocessor = {editable = true, path = "."}
 numpy = "*"
 pandas = "*"
 scikit-learn = "*"
+twine = "*"
 
 [dev-packages]
 pylint = "*"

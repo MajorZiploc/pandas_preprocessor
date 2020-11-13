@@ -10,3 +10,6 @@ In project root:
 
 setup.py with the follow line of code is required for references project files in other project files for import statements
 packages=find_packages(include=['python01', 'python01.*']),
+
+TODO:
+Remove toml as a dependency

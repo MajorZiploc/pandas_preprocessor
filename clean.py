@@ -94,8 +94,22 @@ def clean_dataframe(dataframe, dfConfig):
     for c in allColumns:
         encodersTransform(df, c)
 
-    l = [df.head(), df.dtypes, df.shape, df.columns, df.index]
+    return df
 
-    foreach(print, l)
+
+def invert_cleaning(dataframe, dfConfig):
+    inputs = dfConfig['inputs']
+    outputs = dfConfig['outputs']
+    allColumns = inputs + outputs
+
+    requiredColumns = [i['name'] for i in allColumns]
+
+    df = dataframe[requiredColumns].copy()
+
+    for c in allColumns:
+        preprocessorsInvert(df, c)
+
+    for c in allColumns:
+        encodersInvert(df, c)
 
     return df

@@ -10,12 +10,13 @@ except IOError:
     long_description = ""
 
 setup(
-    name="python01",
+    name="pandas-preprocessor",
     version="0.1.0",
-    description="A pip package",
+    description="A package for preprocessing and encoding columns",
     license="MIT",
     author="manyu",
-    packages=find_packages(include=['python01', 'python01.*']),
+    packages=find_packages(
+        include=['pandas-preprocessor', 'pandas-preprocessor.*']),
     install_requires=[
         "tpot",
         "sklearn"

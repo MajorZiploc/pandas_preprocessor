@@ -1,5 +1,3 @@
-model_file = "pokemon/tpot/model.pkl"
-
 data.connectionstring = "~/Downloads/PokeTypeMatchupData.csv"
 data.format = "csv"
 

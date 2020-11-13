@@ -12,8 +12,10 @@ def get_dataframe(dataConfig):
 
 
 def setEncoders(df, column):
-    foreach(lambda step: setEncoder(
-        df, step, column), column.get('encoding_steps'))
+    es = column.get('encoding_steps')
+    if(es is not None):
+        foreach(lambda step: setEncoder(
+            df, step, column), es)
 
 
 def setEncoder(df, step, column):
@@ -23,8 +25,10 @@ def setEncoder(df, step, column):
 
 
 def encodersTransform(df, column):
-    foreach(lambda step: encoderTransform(
-        df, step), column.get('encoding_steps'))
+    es = column.get('encoding_steps')
+    if(es is not None):
+        foreach(lambda step: encoderTransform(
+            df, step), es)
 
 
 def encoderTransform(df, step):
@@ -33,8 +37,10 @@ def encoderTransform(df, step):
 
 
 def encodersInvert(df, column):
-    foreach(lambda step: encoderInvert(
-        df, step), column.get('encoding_steps'))
+    es = column.get('encoding_steps')
+    if(es is not None):
+        foreach(lambda step: encoderInvert(
+            df, step), es)
 
 
 def encoderInvert(df, step):
@@ -43,8 +49,10 @@ def encoderInvert(df, step):
 
 
 def setPreprocessors(df, column):
-    foreach(lambda step: setPreprocessor(
-        df, step, column), column.get('preprocess_steps'))
+    ps = column.get('preprocess_steps')
+    if(ps is not None):
+        foreach(lambda step: setPreprocessor(
+            df, step, column), ps)
 
 
 def setPreprocessor(df, step, column):
@@ -54,8 +62,10 @@ def setPreprocessor(df, step, column):
 
 
 def preprocessorsTransform(df, column):
-    foreach(lambda step: preprocessorTransform(
-        df, step), column.get('preprocess_steps'))
+    ps = column.get('preprocess_steps')
+    if(ps is not None):
+        foreach(lambda step: preprocessorTransform(
+            df, step), ps)
 
 
 def preprocessorTransform(df, step):
@@ -64,8 +74,10 @@ def preprocessorTransform(df, step):
 
 
 def preprocessorsInvert(df, column):
-    foreach(lambda step: preprocessorInvert(
-        df, step), column.get('preprocess_steps'))
+    ps = column.get('preprocess_steps')
+    if(ps is not None):
+        foreach(lambda step: preprocessorInvert(
+            df, step), ps)
 
 
 def preprocessorInvert(df, step):

@@ -13,3 +13,9 @@ packages=find_packages(include=['python01', 'python01.*']),
 
 TODO:
 Remove toml as a dependency
+Remove test folder from export to dist
+
+Notes on Publishing
+pipenv run python setup.py sdist bdist bdist_wheel
+-- n is the end of the version being pushed
+pipenv run twine upload dist/\*n.tar.gz

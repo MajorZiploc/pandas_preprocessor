@@ -10,6 +10,7 @@ numpy = "*"
 pandas = "*"
 scikit-learn = "*"
 twine = "*"
+pytest = "*"
 
 [dev-packages]
 pylint = "*"

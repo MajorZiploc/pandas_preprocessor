@@ -1,15 +1,16 @@
 import numpy as np
 import pandas as pd
 import toml
-from clean import *
-from encoders.index import encoder_selector
+from pandas_preprocessor import *
 import os
 
-config = toml.load("test/config.toml")
-
 this_dir = os.path.dirname(os.path.realpath(__file__))
-config['data']['connectionstring'] = os.path.join(this_dir,
-                                                  config['data']['connectionstring'])
+tomlLoc = os.path.join(this_dir, "config.toml")
+print(tomlLoc)
+config = toml.load(tomlLoc)
+fileLoc = os.path.join(this_dir, config['data']['connectionstring'])
+print(fileLoc)
+config['data']['connectionstring'] = fileLoc
 
 df = get_dataframe(config['data'])
 

@@ -4,20 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = "*"
-deap = "*"
-update-checker = "*"
-tqdm = "*"
-stopit = "*"
-xgboost = "*"
-scikit-mdr = "*"
-skrebate = "*"
-tpot = "*"
-scikit-learn = "*"
-joblib = "*"
-python01 = {editable = true, path = "."}
 toml = "*"
 pandas-preprocessor = {editable = true, path = "."}
+numpy = "*"
+pandas = "*"
+scikit-learn = "*"
 
 [dev-packages]
 pylint = "*"

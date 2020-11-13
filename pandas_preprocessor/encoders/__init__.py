@@ -1,4 +1,4 @@
-from encoders.label_encoder import LabelEncoder
+from pandas_preprocessor.encoders.label_encoder import LabelEncoder
 
 encoders = {
     'label_encoding': lambda column, dataframe, settings: LabelEncoder(column, dataframe, settings)

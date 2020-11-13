@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
 import toml
-from utils import foreach
-from preprocessors.index import preprocessor_selector
-from encoders.index import encoder_selector
+from pandas_preprocessor.utils import *
+from pandas_preprocessor.preprocessors import *
+from pandas_preprocessor.encoders import *
 
 
 def get_dataframe(dataConfig):

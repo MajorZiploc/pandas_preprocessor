@@ -1,4 +1,4 @@
-from preprocessors.substitution import Substitution
+from pandas_preprocessor.preprocessors.substitution import Substitution
 
 preprocessors = {
     'substitution': lambda column, dataframe, settings: Substitution(column, dataframe, settings)

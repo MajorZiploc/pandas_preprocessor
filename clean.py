@@ -107,9 +107,9 @@ def invert_cleaning(dataframe, dfConfig):
     df = dataframe[requiredColumns].copy()
 
     for c in allColumns:
-        preprocessorsInvert(df, c)
+        encodersInvert(df, c)
 
     for c in allColumns:
-        encodersInvert(df, c)
+        preprocessorsInvert(df, c)
 
     return df

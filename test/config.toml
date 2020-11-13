@@ -8,6 +8,8 @@ ftype = "category"
 algo = "substitution"
 settings.pattern = "\\*"
 settings.replace = "."
+settings.invert_pattern = "^\\."
+settings.invert_replace = "*"
 [[dataframe.inputs.encoding_steps]]
 algo = "label_encoding"
 

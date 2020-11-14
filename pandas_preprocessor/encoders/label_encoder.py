@@ -1,11 +1,12 @@
 from sklearn import preprocessing
+from pandas_preprocessor.encoders.aencoder import AEncoder
 
 
-class LabelEncoder(object):
+class LabelEncoder(AEncoder):
 
     def __init__(self, column, dataframe, settings):
+        AEncoder.__init__(self, column, dataframe, settings)
         self.labelEncoder = preprocessing.LabelEncoder()
-        self.column = column
         self.set_label_encoder(dataframe)
 
     def set_label_encoder(self, dataframe):

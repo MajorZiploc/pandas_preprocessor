@@ -32,7 +32,7 @@ def encodersTransform(df, column):
 
 def encoderTransform(df, step):
     if(step is not None):
-        step['encoder'].transform(df)
+        df = step['encoder'].transform(df)
     return df
 
 

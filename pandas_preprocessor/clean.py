@@ -25,25 +25,29 @@ def setEncoder(df, step, column):
 def encodersTransform(df, column):
     es = column.get('encoding_steps')
     if(es is not None):
-        foreach(lambda step: encoderTransform(
-            df, step), es)
+        for step in es:
+            df = encoderTransform(df, step)
+    return df
 
 
 def encoderTransform(df, step):
     if(step is not None):
         step['encoder'].transform(df)
+    return df
 
 
 def encodersInvert(df, column):
     es = column.get('encoding_steps')
     if(es is not None):
-        foreach(lambda step: encoderInvert(
-            df, step), es)
+        for step in es:
+            df = encoderInvert(df, step)
+    return df
 
 
 def encoderInvert(df, step):
     if(step is not None):
         step['encoder'].invert_transform(df)
+    return df
 
 
 def setPreprocessors(df, column):
@@ -62,25 +66,29 @@ def setPreprocessor(df, step, column):
 def preprocessorsTransform(df, column):
     ps = column.get('preprocess_steps')
     if(ps is not None):
-        foreach(lambda step: preprocessorTransform(
-            df, step), ps)
+        for step in ps:
+            df = preprocessorTransform(df, step)
+    return df
 
 
 def preprocessorTransform(df, step):
     if(step is not None):
         step['preprocessor'].transform(df)
+    return df
 
 
 def preprocessorsInvert(df, column):
     ps = column.get('preprocess_steps')
     if(ps is not None):
-        foreach(lambda step: preprocessorInvert(
-            df, step), ps)
+        for step in ps:
+            df = preprocessorInvert(df, step)
+    return df
 
 
 def preprocessorInvert(df, step):
     if(step is not None):
-        step['preprocessor'].invert_transform(df)
+        df = step['preprocessor'].invert_transform(df)
+    return df
 
 
 def clean_dataframe(dataframe, dfConfig):
@@ -100,13 +108,13 @@ def clean_dataframe(dataframe, dfConfig):
         setPreprocessors(df, c)
 
     for c in specifiedColumn:
-        preprocessorsTransform(df, c)
+        df = preprocessorsTransform(df, c)
 
     for c in specifiedColumn:
         setEncoders(df, c)
 
     for c in specifiedColumn:
-        encodersTransform(df, c)
+        df = encodersTransform(df, c)
 
     return df
 
@@ -124,9 +132,9 @@ def invert_cleaning(dataframe, dfConfig):
         df = dataframe.copy()
 
     for c in specifiedColumn:
-        encodersInvert(df, c)
+        df = encodersInvert(df, c)
 
     for c in specifiedColumn:
-        preprocessorsInvert(df, c)
+        df = preprocessorsInvert(df, c)
 
     return df

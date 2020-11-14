@@ -1,1 +1,6 @@
 Change Log
+0.1.3
+  Adds one hot encoder
+  Adds to_num
+  Adds to_type
+  Reworks most internal structural of clean and invert

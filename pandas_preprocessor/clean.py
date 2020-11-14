@@ -88,8 +88,7 @@ def preprocessorInvert(df, step):
 def clean_dataframe(dataframe, dfConfig):
     inputs = dfConfig['inputs']
     outputs = dfConfig['outputs']
-    dfConfig['keeprows'] = dfConfig.get(
-        'keeprows') if dfConfig.get('keeprows') is not None else True
+    dfConfig['keeprows'] = dfConfig.get('keeprows', True)
     specifiedColumn = inputs + outputs
 
     specifiedColumnNames = [i['name'] for i in specifiedColumn]

@@ -30,6 +30,7 @@ settings.pattern = "\\*"
 settings.replace = "."
 [[dataframe.inputs.encoding_steps]]
 algo = "one_hot_encoding"
+settings.should_track_invert = true
 
 [[dataframe.outputs]]
 name = "Grass"

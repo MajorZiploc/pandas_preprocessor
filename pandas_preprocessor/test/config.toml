@@ -11,6 +11,7 @@ settings.pattern = "\\*"
 settings.replace = "."
 settings.invert_pattern = "^\\."
 settings.invert_replace = "*"
+settings.flags = "i"
 [[dataframe.inputs.encoding_steps]]
 algo = "label_encoding"
 

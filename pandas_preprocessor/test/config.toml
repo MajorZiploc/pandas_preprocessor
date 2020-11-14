@@ -19,7 +19,7 @@ algo = "label_encoding"
 name = "Name"
 ftype = "category"
 [[dataframe.inputs.preprocess_steps]]
-algo = "to_lower"
+algo = "to_upper"
 
 [[dataframe.inputs]]
 name = "Water"

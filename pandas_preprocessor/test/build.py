@@ -8,6 +8,10 @@ import os
 def l(df): return [df.head(), df.dtypes, df.shape, df.columns, df.index]
 
 
+def p(df):
+    foreach(print, l(df))
+
+
 def build():
     this_dir = os.path.dirname(os.path.realpath(__file__))
     tomlLoc = os.path.join(this_dir, "config.toml")
@@ -19,12 +23,17 @@ def build():
 
     df = get_dataframe(config['data'])
 
-    # foreach(print, l(df))
+    print('OG DF')
+    p(df)
     cleaned_df = clean_dataframe(df, config['dataframe'])
+    print('Cleaned DF')
+    p(cleaned_df)
     # cleaned_df['Grass'] = pd.to_numeric(cleaned_df['Grass'], downcast=None)
     # cleaned_df['Grass'] = cleaned_df['Grass'].astype('object')
     # foreach(print, l(cleaned_df))
-    foreach(print, l(invert_cleaning(cleaned_df, config['dataframe'])))
+    inverted_df = invert_cleaning(cleaned_df, config['dataframe'])
+    print('Inverted DF')
+    p(inverted_df)
 
 
 build()

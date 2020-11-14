@@ -16,6 +16,12 @@ settings.flags = "i"
 algo = "label_encoding"
 
 [[dataframe.inputs]]
+name = "Name"
+ftype = "category"
+[[dataframe.inputs.preprocess_steps]]
+algo = "to_lower"
+
+[[dataframe.inputs]]
 name = "Water"
 ftype = "category"
 [[dataframe.inputs.preprocess_steps]]

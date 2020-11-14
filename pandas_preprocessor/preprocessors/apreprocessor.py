@@ -6,7 +6,7 @@ class APreprocessor(object):
         self.settings = settings if settings is not None else {}
 
     def transform(self, dataframe):
-        pass
+        return dataframe
 
     def invert_transform(self, dataframe):
         return dataframe

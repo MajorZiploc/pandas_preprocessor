@@ -24,6 +24,8 @@ def build():
     # cleaned_df['Grass'] = pd.to_numeric(cleaned_df['Grass'], downcast=None)
     # cleaned_df['Grass'] = cleaned_df['Grass'].astype('object')
     # foreach(print, l(cleaned_df))
+    y = pd.arrays.PandasArray(np.array([1, 2]))
+    x = cleaned_df.columns.array
     foreach(print, l(invert_cleaning(cleaned_df, config['dataframe'])))
 
 

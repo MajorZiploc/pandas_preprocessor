@@ -4,3 +4,5 @@ Change Log
   Adds to_num
   Adds to_type
   Reworks most internal structural of clean and invert
+0.1.4
+  Improves substitution preprocessor by allowing for regex flags to be passed in

@@ -14,6 +14,7 @@ packages=find_packages(include=['python01', 'python01.*']),
 TODO:
 Remove toml as a dependency
 Remove test folder from export to dist
+Add missing value preprocessors like mode and mean
 
 Notes on Publishing
 pipenv run python setup.py sdist bdist bdist_wheel

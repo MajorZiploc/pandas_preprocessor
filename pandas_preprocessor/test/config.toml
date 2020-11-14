@@ -29,6 +29,7 @@ ftype = "category"
 [[dataframe.outputs.preprocess_steps]]
 algo = "substitution"
 settings.pattern = "\\*"
-settings.replace = "."
-[[dataframe.outputs.encoding_steps]]
-algo = "label_encoding"
+settings.replace = ""
+[[dataframe.outputs.preprocess_steps]]
+algo = "to_num"
+settings.invert_type = "int32"

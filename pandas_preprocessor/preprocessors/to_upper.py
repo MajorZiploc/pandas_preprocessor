@@ -10,6 +10,3 @@ class ToUpper(APreprocessor):
         dataframe[self.column] = dataframe[self.column].map(
             lambda string: string.upper())
         return dataframe
-
-    def invert_transform(self, dataframe):
-        return dataframe

@@ -9,4 +9,4 @@ class AEncoder(object):
         pass
 
     def invert_transform(self, dataframe):
-        pass
+        return dataframe

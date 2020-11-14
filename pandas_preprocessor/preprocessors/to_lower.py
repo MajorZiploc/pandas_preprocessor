@@ -10,6 +10,3 @@ class ToLower(APreprocessor):
         dataframe[self.column] = dataframe[self.column].map(
             lambda string: string.lower())
         return dataframe
-
-    def invert_transform(self, dataframe):
-        return dataframe

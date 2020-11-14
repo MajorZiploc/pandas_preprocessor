@@ -41,4 +41,6 @@ settings.pattern = "\\*"
 settings.replace = ""
 [[dataframe.outputs.preprocess_steps]]
 algo = "to_num"
-settings.invert_type = "int32"
+settings.invert_type = "float64"
+[[dataframe.outputs.preprocess_steps]]
+algo = "mv_mode"

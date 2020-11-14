@@ -1,11 +1,11 @@
 import pandas as pd
+from pandas_preprocessor.preprocessors.apreprocessor import APreprocessor
 
 
-class ToType(object):
+class ToType(APreprocessor):
 
     def __init__(self, column, dataframe, settings):
-        self.column = column
-        self.settings = settings if settings is not None else {}
+        APreprocessor.__init__(self, column, dataframe, settings)
 
     def transform(self, dataframe):
         ty = self.settings.get('type')

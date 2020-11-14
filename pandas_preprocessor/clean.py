@@ -88,22 +88,27 @@ def preprocessorInvert(df, step):
 def clean_dataframe(dataframe, dfConfig):
     inputs = dfConfig['inputs']
     outputs = dfConfig['outputs']
-    allColumns = inputs + outputs
+    dfConfig['keeprows'] = dfConfig.get(
+        'keeprows') if dfConfig.get('keeprows') is not None else True
+    specifiedColumn = inputs + outputs
 
-    requiredColumns = [i['name'] for i in allColumns]
+    specifiedColumnNames = [i['name'] for i in specifiedColumn]
 
-    df = dataframe[requiredColumns].copy()
+    if (not dfConfig.get('keeprows')):
+        df = dataframe[specifiedColumnNames].copy()
+    else:
+        df = dataframe.copy()
 
-    for c in allColumns:
+    for c in specifiedColumn:
         setPreprocessors(df, c)
 
-    for c in allColumns:
+    for c in specifiedColumn:
         preprocessorsTransform(df, c)
 
-    for c in allColumns:
+    for c in specifiedColumn:
         setEncoders(df, c)
 
-    for c in allColumns:
+    for c in specifiedColumn:
         encodersTransform(df, c)
 
     return df
@@ -112,16 +117,19 @@ def clean_dataframe(dataframe, dfConfig):
 def invert_cleaning(dataframe, dfConfig):
     inputs = dfConfig['inputs']
     outputs = dfConfig['outputs']
-    allColumns = inputs + outputs
+    specifiedColumn = inputs + outputs
 
-    requiredColumns = [i['name'] for i in allColumns]
+    specifiedColumnNames = [i['name'] for i in specifiedColumn]
 
-    df = dataframe[requiredColumns].copy()
+    if (not dfConfig.get('keeprows')):
+        df = dataframe[specifiedColumnNames].copy()
+    else:
+        df = dataframe.copy()
 
-    for c in allColumns:
+    for c in specifiedColumn:
         encodersInvert(df, c)
 
-    for c in allColumns:
+    for c in specifiedColumn:
         preprocessorsInvert(df, c)
 
     return df

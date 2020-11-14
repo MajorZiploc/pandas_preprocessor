@@ -25,12 +25,11 @@ def build():
 
     print('OG DF')
     p(df)
+
     cleaned_df = clean_dataframe(df, config['dataframe'])
     print('Cleaned DF')
     p(cleaned_df)
-    # cleaned_df['Grass'] = pd.to_numeric(cleaned_df['Grass'], downcast=None)
-    # cleaned_df['Grass'] = cleaned_df['Grass'].astype('object')
-    # foreach(print, l(cleaned_df))
+
     inverted_df = invert_cleaning(cleaned_df, config['dataframe'])
     print('Inverted DF')
     p(inverted_df)

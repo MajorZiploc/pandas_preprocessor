@@ -22,7 +22,7 @@ algo = "substitution"
 settings.pattern = "\\*"
 settings.replace = "."
 [[dataframe.inputs.encoding_steps]]
-algo = "label_encoding"
+algo = "one_hot_encoding"
 
 [[dataframe.outputs]]
 name = "Grass"

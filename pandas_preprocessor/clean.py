@@ -126,10 +126,12 @@ def invert_cleaning(dataframe, dfConfig):
 
     specifiedColumnNames = [i['name'] for i in specifiedColumn]
 
-    if (not dfConfig.get('keeprows')):
-        df = dataframe[specifiedColumnNames].copy()
-    else:
-        df = dataframe.copy()
+    df = dataframe.copy()
+
+    # if (not dfConfig.get('keeprows')):
+    #     df = dataframe[specifiedColumnNames].copy()
+    # else:
+    #     df = dataframe.copy()
 
     for c in specifiedColumn:
         df = encodersInvert(df, c)

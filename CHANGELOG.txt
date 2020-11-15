@@ -8,3 +8,5 @@ Change Log
   Improves substitution preprocessor by allowing for regex flags to be passed in
   Adds to_lower preprocessor
   Adds to_upper preprocessor
+  Adds mv_mode preprocessor
+  Adds mv_with preprocessor

@@ -1,9 +1,11 @@
 Change Log
+
 0.1.3
   Adds one hot encoder
   Adds to_num
   Adds to_type
   Reworks most internal structural of clean and invert
+
 0.1.4
   Improves substitution preprocessor by allowing for regex flags to be passed in
   Adds to_lower preprocessor
@@ -14,3 +16,7 @@ Change Log
   Adds mv_median preprocessor
   Adds normalize preprocessor
   Fixes preprocessing steps to set and transform then move to the next preprocessor
+
+0.1.5
+  Fixes encoder steps to set and transform then move to the next encoder
+  Renames keeprows to keep_rows

@@ -1,7 +1,7 @@
 data.connectionstring = "data/PokeTypeMatchupData.csv"
 data.format = "csv"
 
-dataframe.keeprows = false
+dataframe.keep_rows = false
 [[dataframe.inputs]]
 name = "Fire"
 ftype = "category"

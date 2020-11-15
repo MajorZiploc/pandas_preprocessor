@@ -10,3 +10,4 @@ Change Log
   Adds to_upper preprocessor
   Adds mv_mode preprocessor
   Adds mv_with preprocessor
+  Adds mv_mean preprocessor

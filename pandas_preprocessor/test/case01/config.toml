@@ -2,6 +2,7 @@ data.connectionstring = "data/PokeTypeMatchupData.csv"
 data.format = "csv"
 
 dataframe.keep_rows = false
+
 [[dataframe.inputs]]
 name = "Fire"
 ftype = "category"
@@ -14,6 +15,7 @@ settings.invert_replace = "*"
 settings.flags = "i"
 [[dataframe.inputs.encoding_steps]]
 algo = "label_encoding"
+settings.file_location = "fire_labels.pkl"
 
 [[dataframe.inputs]]
 name = "Name"
@@ -30,9 +32,11 @@ settings.pattern = "\\*"
 settings.replace = "."
 [[dataframe.inputs.encoding_steps]]
 algo = "label_encoding"
+settings.file_location = "water_labels.pkl"
 [[dataframe.inputs.encoding_steps]]
 algo = "one_hot_encoding"
 settings.should_track_invert = true
+settings.file_location = "water_one_hot.pkl"
 
 [[dataframe.outputs]]
 name = "Grass"

@@ -21,6 +21,15 @@ def build():
     print(fileLoc)
     config['data']['connectionstring'] = fileLoc
 
+    inputs = config['dataframe']['inputs']
+
+    for i in inputs:
+        es = i.get('encoding_steps', [])
+        for e in es:
+            fl = nc(lambda: e['settings']['file_location'])
+            if (fl is not None):
+                e['settings']['file_location'] = path.join(this_dir, fl)
+
     df = get_dataframe(config['data'])
 
     print('OG DF')

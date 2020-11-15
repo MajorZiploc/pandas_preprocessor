@@ -9,25 +9,23 @@ def get_dataframe(dataConfig):
         else None
 
 
-def setEncoders(df, column):
+def encodersAction(df, column):
     es = column.get('encoding_steps')
     if(es is not None):
-        foreach(lambda step: setEncoder(
-            df, step, column), es)
+        for step in es:
+            df = encoderAction(df, step, column)
+    return df
+
+
+def encoderAction(df, step, column):
+    setEncoder(df, step, column)
+    return encoderTransform(df, step)
 
 
 def setEncoder(df, step, column):
     if(step is not None):
         step['encoder'] = encoder_selector(
             step['algo'])(column['name'], df, step.get('settings'))
-
-
-def encodersTransform(df, column):
-    es = column.get('encoding_steps')
-    if(es is not None):
-        for step in es:
-            df = encoderTransform(df, step)
-    return df
 
 
 def encoderTransform(df, step):
@@ -106,10 +104,7 @@ def clean_dataframe(dataframe, dfConfig):
         df = preprocessorsAction(df, c)
 
     for c in specifiedColumn:
-        setEncoders(df, c)
-
-    for c in specifiedColumn:
-        df = encodersTransform(df, c)
+        df = encodersAction(df, c)
 
     return df
 
@@ -122,11 +117,6 @@ def invert_cleaning(dataframe, dfConfig):
     specifiedColumnNames = [i['name'] for i in specifiedColumn]
 
     df = dataframe.copy()
-
-    # if (not dfConfig.get('keeprows')):
-    #     df = dataframe[specifiedColumnNames].copy()
-    # else:
-    #     df = dataframe.copy()
 
     for c in specifiedColumn:
         df = encodersInvert(df, c)

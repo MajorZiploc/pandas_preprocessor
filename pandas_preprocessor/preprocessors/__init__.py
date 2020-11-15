@@ -7,6 +7,7 @@ from pandas_preprocessor.preprocessors.to_upper import ToUpper
 from pandas_preprocessor.preprocessors.mv_mode import MvMode
 from pandas_preprocessor.preprocessors.mv_with import MvWith
 from pandas_preprocessor.preprocessors.mv_mean import MvMean
+from pandas_preprocessor.preprocessors.mv_median import MvMedian
 
 preprocessors = {
     'substitution': lambda column, dataframe, settings: Substitution(column, dataframe, settings),
@@ -16,7 +17,8 @@ preprocessors = {
     'to_upper': lambda column, dataframe, settings: ToUpper(column, dataframe, settings),
     'mv_mode': lambda column, dataframe, settings: MvMode(column, dataframe, settings),
     'mv_with': lambda column, dataframe, settings: MvWith(column, dataframe, settings),
-    'mv_mean': lambda column, dataframe, settings: MvMean(column, dataframe, settings)
+    'mv_mean': lambda column, dataframe, settings: MvMean(column, dataframe, settings),
+    'mv_median': lambda column, dataframe, settings: MvMedian(column, dataframe, settings),
 }
 
 

@@ -8,6 +8,7 @@ from pandas_preprocessor.preprocessors.mv_mode import MvMode
 from pandas_preprocessor.preprocessors.mv_with import MvWith
 from pandas_preprocessor.preprocessors.mv_mean import MvMean
 from pandas_preprocessor.preprocessors.mv_median import MvMedian
+from pandas_preprocessor.preprocessors.normalize import Normalize
 
 preprocessors = {
     'substitution': lambda column, dataframe, settings: Substitution(column, dataframe, settings),
@@ -19,6 +20,7 @@ preprocessors = {
     'mv_with': lambda column, dataframe, settings: MvWith(column, dataframe, settings),
     'mv_mean': lambda column, dataframe, settings: MvMean(column, dataframe, settings),
     'mv_median': lambda column, dataframe, settings: MvMedian(column, dataframe, settings),
+    'normalize': lambda column, dataframe, settings: Normalize(column, dataframe, settings)
 }
 
 

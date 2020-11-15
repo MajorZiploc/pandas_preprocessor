@@ -9,12 +9,12 @@ pandas-preprocessor = {editable = true, path = "."}
 numpy = "*"
 pandas = "*"
 scikit-learn = "*"
-twine = "*"
-pytest = "*"
 
 [dev-packages]
 pylint = "*"
 autopep8 = "*"
+twine = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.8"

@@ -29,6 +29,8 @@ algo = "substitution"
 settings.pattern = "\\*"
 settings.replace = "."
 [[dataframe.inputs.encoding_steps]]
+algo = "label_encoding"
+[[dataframe.inputs.encoding_steps]]
 algo = "one_hot_encoding"
 settings.should_track_invert = true
 

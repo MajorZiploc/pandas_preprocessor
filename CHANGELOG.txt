@@ -17,6 +17,9 @@ Change Log
   Adds normalize preprocessor
   Fixes preprocessing steps to set and transform then move to the next preprocessor
 
-0.1.5
+0.1.6
   Fixes encoder steps to set and transform then move to the next encoder
   Renames keeprows to keep_rows
+
+0.1.7
+  Fixes invert_cleaning to iterate over preprocessors and encoders in reverse order

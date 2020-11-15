@@ -37,7 +37,7 @@ def encoderTransform(df, step):
 def encodersInvert(df, column):
     es = column.get('encoding_steps')
     if(es is not None):
-        for step in es:
+        for step in reversed(es):
             df = encoderInvert(df, step)
     return df
 
@@ -76,7 +76,7 @@ def preprocessorTransform(df, step):
 def preprocessorsInvert(df, column):
     ps = column.get('preprocess_steps')
     if(ps is not None):
-        for step in ps:
+        for step in reversed(ps):
             df = preprocessorInvert(df, step)
     return df
 

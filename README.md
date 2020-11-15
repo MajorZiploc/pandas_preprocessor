@@ -14,7 +14,7 @@ packages=find_packages(include=['pandas_preprocessor', 'pandas_preprocessor.*'])
 TODO:
 Remove toml as a dependency
 Remove test folder from export to dist
-Add missing value preprocessors like mode and mean
+Add pickling to label and one hot encoders / one hot encoder will have to use sklearns version
 
 Notes on Publishing
 pipenv run python setup.py sdist bdist bdist_wheel

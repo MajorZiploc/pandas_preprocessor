@@ -9,7 +9,7 @@ In project root:
 > python <filename>
 
 setup.py with the follow line of code is required for references project files in other project files for import statements
-packages=find_packages(include=['python01', 'python01.*']),
+packages=find_packages(include=['pandas_preprocessor', 'pandas_preprocessor.*']),
 
 TODO:
 Remove toml as a dependency
@@ -19,4 +19,4 @@ Add missing value preprocessors like mode and mean
 Notes on Publishing
 pipenv run python setup.py sdist bdist bdist_wheel
 -- n is the end of the version being pushed
-pipenv run twine upload dist/\*n.tar.gz
+pipenv run twine upload dist/pandas_preprocessor-[version_number].tar.gz

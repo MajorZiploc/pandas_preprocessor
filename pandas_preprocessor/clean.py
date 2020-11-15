@@ -50,25 +50,23 @@ def encoderInvert(df, step):
     return df
 
 
-def setPreprocessors(df, column):
+def preprocessorsAction(df, column):
     ps = column.get('preprocess_steps')
     if(ps is not None):
-        foreach(lambda step: setPreprocessor(
-            df, step, column), ps)
+        for step in ps:
+            df = preprocessorAction(df, step, column)
+    return df
+
+
+def preprocessorAction(df, step, column):
+    setPreprocessor(df, step, column)
+    return preprocessorTransform(df, step)
 
 
 def setPreprocessor(df, step, column):
     if(step is not None):
         step['preprocessor'] = preprocessor_selector(
             step['algo'])(column['name'], df, step.get('settings'))
-
-
-def preprocessorsTransform(df, column):
-    ps = column.get('preprocess_steps')
-    if(ps is not None):
-        for step in ps:
-            df = preprocessorTransform(df, step)
-    return df
 
 
 def preprocessorTransform(df, step):
@@ -105,10 +103,7 @@ def clean_dataframe(dataframe, dfConfig):
         df = dataframe.copy()
 
     for c in specifiedColumn:
-        setPreprocessors(df, c)
-
-    for c in specifiedColumn:
-        df = preprocessorsTransform(df, c)
+        df = preprocessorsAction(df, c)
 
     for c in specifiedColumn:
         setEncoders(df, c)

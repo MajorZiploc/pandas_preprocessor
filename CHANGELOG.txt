@@ -11,3 +11,6 @@ Change Log
   Adds mv_mode preprocessor
   Adds mv_with preprocessor
   Adds mv_mean preprocessor
+  Adds mv_median preprocessor
+  Adds normalize preprocessor
+  Fixes preprocessing steps to set and transform then move to the next preprocessor

@@ -43,9 +43,6 @@ settings.replace = ""
 algo = "to_num"
 settings.invert_type = "float64"
 [[dataframe.outputs.preprocess_steps]]
-algo = "mv_mean"
+algo = "mv_median"
 [[dataframe.outputs.preprocess_steps]]
-algo = "mv_mode"
-[[dataframe.outputs.preprocess_steps]]
-algo = "mv_with"
-settings.value = "stub_value"
+algo = "normalize"

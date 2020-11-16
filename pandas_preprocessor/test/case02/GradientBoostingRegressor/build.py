@@ -37,8 +37,9 @@ r = clean_dataframe(r, config['dataframe'])
 
 print('Cleaned DF')
 p(r)
-X = r.drop('Price', axis=1)
-y = r['Price']
+outputColumnName = [o['name'] for o in config['dataframe']['outputs']][0]
+X = r.drop(outputColumnName, axis=1)
+y = r[outputColumnName]
 
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(

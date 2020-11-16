@@ -31,12 +31,9 @@ algo = "substitution"
 settings.pattern = "\\*"
 settings.replace = "."
 [[dataframe.inputs.encoding_steps]]
-algo = "label_encoding"
-settings.file_location = "water_labels.pkl"
-[[dataframe.inputs.encoding_steps]]
-algo = "one_hot_encoding"
+algo = "label_binarizer"
 settings.should_track_invert = true
-settings.file_location = "water_one_hot.pkl"
+settings.file_location = "water_label_binarizer.pkl"
 
 [[dataframe.outputs]]
 name = "Grass"

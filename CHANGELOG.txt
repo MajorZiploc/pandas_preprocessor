@@ -23,3 +23,6 @@ Change Log
 
 0.1.7
   Fixes invert_cleaning to iterate over preprocessors and encoders in reverse order
+
+0.1.8
+  Fixes invert_cleaning encoder process to update the dataframe

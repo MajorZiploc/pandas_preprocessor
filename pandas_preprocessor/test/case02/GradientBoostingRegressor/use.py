@@ -1,6 +1,11 @@
 import joblib
+import os
+import toml
 
-joblib_file = "house_model.pkl"
+this_dir = os.path.dirname(os.path.realpath(__file__))
+tomlLoc = os.path.join(this_dir, "config.toml")
+config = toml.load(tomlLoc)
+joblib_file = os.path.join(this_dir, config['model_file_location'])
 # Load from file
 model = joblib.load(joblib_file)
 

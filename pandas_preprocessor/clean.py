@@ -44,7 +44,7 @@ def encodersInvert(df, column):
 
 def encoderInvert(df, step):
     if(step is not None):
-        step['encoder'].invert_transform(df)
+        df = step['encoder'].invert_transform(df)
     return df
 
 

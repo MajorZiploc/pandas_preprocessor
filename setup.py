@@ -24,6 +24,7 @@ setup(
         'numpy',
         'scikit-learn',
         'pandas',
-        'toml'
+        'toml',
+        'joblib'
     ]
 )

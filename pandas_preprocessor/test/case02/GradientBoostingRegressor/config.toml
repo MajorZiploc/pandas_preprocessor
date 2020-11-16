@@ -1,7 +1,7 @@
 data.connectionstring = "data/Melbourne_housing_FULL.csv"
 data.format = "csv"
 
-dataframe.keep_rows = true
+dataframe.keep_columns = true
 
 [[dataframe.inputs]]
 name = "Suburb"

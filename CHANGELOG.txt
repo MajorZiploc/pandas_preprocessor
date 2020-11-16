@@ -29,3 +29,4 @@ Change Log
   Adds encoder pickling for label binarizer
   Adds encoder pickling for label encoder
   Fixes label binarizer
+  Renames keep_rows to keep_columns

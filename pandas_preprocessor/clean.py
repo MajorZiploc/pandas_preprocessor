@@ -90,12 +90,12 @@ def preprocessorInvert(df, step):
 def clean_dataframe(dataframe, dfConfig):
     inputs = dfConfig['inputs']
     outputs = dfConfig['outputs']
-    dfConfig['keep_rows'] = dfConfig.get('keep_rows', True)
+    dfConfig['keep_columns'] = dfConfig.get('keep_columns', True)
     specifiedColumn = inputs + outputs
 
     specifiedColumnNames = [i['name'] for i in specifiedColumn]
 
-    if (not dfConfig.get('keep_rows')):
+    if (not dfConfig.get('keep_columns')):
         df = dataframe[specifiedColumnNames].copy()
     else:
         df = dataframe.copy()

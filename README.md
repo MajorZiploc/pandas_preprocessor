@@ -15,7 +15,6 @@ TODO:
 Remove toml as a dependency
 Remove test folder from export to dist
 Add pickling to label and one hot encoders / one hot encoder will have to use sklearns version
-rename keep_rows to keep_columns
 
 Notes on Publishing
 pipenv run python setup.py sdist bdist bdist_wheel

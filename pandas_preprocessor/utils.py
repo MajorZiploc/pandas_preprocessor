@@ -5,6 +5,6 @@ def foreach(action, iterable):
 
 def nc(supplier):
     try:
-        v = supplier()
+        return supplier()
     except AttributeError:
-        v = None
+        return None

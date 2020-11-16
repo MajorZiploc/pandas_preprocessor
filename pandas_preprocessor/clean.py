@@ -24,7 +24,7 @@ def encoderAction(df, step, column, is_use_case):
 
 def setEncoder(df, step, column, is_use_case):
     if(step is not None):
-        settings = step.get('settings')
+        settings = step.get('settings', {})
         settings['is_use_case'] = is_use_case
         step['encoder'] = encoder_selector(
             step['algo'])(column['name'], df, step.get('settings'))
@@ -65,7 +65,7 @@ def preprocessorAction(df, step, column, is_use_case):
 
 def setPreprocessor(df, step, column, is_use_case):
     if(step is not None):
-        settings = step.get('settings')
+        settings = step.get('settings', {})
         settings['is_use_case'] = is_use_case
         step['preprocessor'] = preprocessor_selector(
             step['algo'])(column['name'], df, step.get('settings'))

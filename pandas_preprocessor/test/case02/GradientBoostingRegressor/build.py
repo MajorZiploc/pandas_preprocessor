@@ -1,68 +1,89 @@
 import pandas as pd
+import toml
 from sklearn.model_selection import train_test_split
 from sklearn import ensemble
 from sklearn.metrics import mean_absolute_error
 import math
 import joblib
-from utils import *
+from pandas_preprocessor import *
+import os
 
 
-def toNum(n):
-    return 0 if(math.isnan(n)) else n
+def l(df): return [df.head(), df.dtypes, df.shape, df.columns, df.index]
 
 
-def fn1(row):
-    return toNum(row['Price']) + toNum(row['Propertycount'])
+def p(df):
+    foreach(print, l(df))
 
 
-df = pd.read_csv('~/Downloads/Melbourne_housing_FULL.csv')
+this_dir = os.path.dirname(os.path.realpath(__file__))
+tomlLoc = os.path.join(this_dir, "config.toml")
+# print(tomlLoc)
+config = toml.load(tomlLoc)
+fileLoc = os.path.join(this_dir, config['data']['connectionstring'])
+# print(fileLoc)
+config['data']['connectionstring'] = fileLoc
 
-# r = df.drop('Address', axis=1).drop('Regionname', axis=1)[
-#     ['Price', 'Distance', 'Propertycount']]
-# r['AddedStuff'] = r.apply(fn1, axis=1)
-# r['Price'] = r.Price.map(lambda x: x + 1)
-# # filters rows with nan prices
-# r = r[r.apply(lambda row: not math.isnan(row['Price']), axis=1)]
+inputs = config['dataframe']['inputs']
+
+for i in inputs:
+    es = i.get('encoding_steps', [])
+    for e in es:
+        fl = nc(lambda: e['settings']['file_location'])
+        if (fl is not None):
+            e['settings']['file_location'] = os.path.join(this_dir, fl)
+
+df = get_dataframe(config['data'])
 
 
 r = df.drop(['Address', 'Method', 'SellerG', 'Date',
              'Postcode', 'Lattitude', 'Longtitude', 'Regionname', 'Propertycount'], axis=1)
+# p(r)
+print(r.shape)
 r.dropna(axis=0, how='any', thresh=None, subset=None, inplace=True)
-# n = df.iloc[99]
-# c = df.columns
 
-r = pd.get_dummies(r, columns=['Suburb', 'CouncilArea', 'Type'])
+print(r.shape)
+# p(r)
 
-X = r.drop('Price', axis=1)
-y = r['Price']
+r = clean_dataframe(r, config['dataframe'])
 
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.3, shuffle=True)
+# print(r.head())
+print('Cleaned DF')
+p(r)
+inverted_df = invert_cleaning(r, config['dataframe'])
+print('Inverted DF')
+p(inverted_df)
 
-h = r.head()
+# X = r.drop('Price', axis=1)
+# y = r['Price']
 
-l = [h, len(df), len(r)]
+# X_train, X_test, y_train, y_test = train_test_split(
+#     X, y, test_size=0.3, shuffle=True)
 
-foreach(print, l)
+# h = r.head()
 
-model = ensemble.GradientBoostingRegressor(
-    n_estimators=250,
-    learning_rate=0.1,
-    max_depth=5,
-    min_samples_split=4,
-    min_samples_leaf=6,
-    max_features=0.6,
-    loss='huber'
-)
+# l = [h, len(df), len(r)]
 
-model.fit(X_train, y_train)
+# foreach(print, l)
 
-mae_train = mean_absolute_error(y_train, model.predict(X_train))
+# model = ensemble.GradientBoostingRegressor(
+#     n_estimators=250,
+#     learning_rate=0.1,
+#     max_depth=5,
+#     min_samples_split=4,
+#     min_samples_leaf=6,
+#     max_features=0.6,
+#     loss='huber'
+# )
 
-print("Training Set Mean Absolute Error: %.2f" % mae_train)
+# model.fit(X_train, y_train)
 
-mae_test = mean_absolute_error(y_test, model.predict(X_test))
-print("Test Set Mean Absolute Error: %.2f" % mae_test)
+# mae_train = mean_absolute_error(y_train, model.predict(X_train))
 
-joblib_file = "house_model.pkl"
-joblib.dump(model, joblib_file)
+# print("Training Set Mean Absolute Error: %.2f" % mae_train)
+
+# mae_test = mean_absolute_error(y_test, model.predict(X_test))
+# print("Test Set Mean Absolute Error: %.2f" % mae_test)
+
+# joblib_file = "house_model.pkl"
+# joblib.dump(model, joblib_file)

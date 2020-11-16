@@ -27,9 +27,6 @@ class LabelBinarizer(AEncoder):
         indices = [i for i in range(0, len(cs.index))]
         joinColumn = '___labelbinarizer__index__join_column___'
         dataframe[joinColumn] = indices
-        # for (columnName, columnData) in cs.iteritems():
-        #     cs[columnName] = pd.to_numeric(
-        #         cs[columnName], downcast='integer')
 
         dataframe = dataframe.join(cs, how='inner', on=joinColumn)
         dataframe.drop(self.column, inplace=True, axis=1)

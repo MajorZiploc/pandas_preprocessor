@@ -40,3 +40,7 @@ def load_model(config):
 # df1 = r
 # df2 = r.dropna(axis=0, how='any', thresh=None, subset=None)
 # df3 = df1[~df1.isin(df2)].dropna(how='all')
+
+# for (columnName, columnData) in cs.iteritems():
+#     cs[columnName] = pd.to_numeric(
+#         cs[columnName], downcast='integer')

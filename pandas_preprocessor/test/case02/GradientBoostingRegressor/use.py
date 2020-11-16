@@ -24,7 +24,7 @@ house_data = clean_input(house_data, config['dataframe'])
 outputColumnNames = [o['name'] for o in config['dataframe']['outputs']]
 house_to_value = house_data.drop(outputColumnNames, axis=1)
 
-print('Transformed DF')
+print('Cleaned DF')
 print(house_data.head())
 
 # ask the model the user query

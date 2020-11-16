@@ -14,7 +14,7 @@ settings.invert_pattern = "^\\."
 settings.invert_replace = "*"
 settings.flags = "i"
 [[dataframe.inputs.encoding_steps]]
-algo = "label_encoding"
+algo = "label_encoder"
 settings.file_location = "fire_labels.pkl"
 
 [[dataframe.inputs]]
@@ -31,8 +31,10 @@ algo = "substitution"
 settings.pattern = "\\*"
 settings.replace = "."
 [[dataframe.inputs.encoding_steps]]
+algo = "label_encoder"
+settings.file_location = "water_labels.pkl"
+[[dataframe.inputs.encoding_steps]]
 algo = "label_binarizer"
-settings.should_track_invert = true
 settings.file_location = "water_label_binarizer.pkl"
 
 [[dataframe.outputs]]

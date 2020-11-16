@@ -15,7 +15,7 @@ settings.invert_replace = "*"
 settings.flags = "i"
 [[dataframe.inputs.encoding_steps]]
 algo = "label_encoder"
-settings.file_location = "fire_labels.pkl"
+settings.file_location = "pickles/fire_labels.pkl"
 
 [[dataframe.inputs]]
 name = "Name"
@@ -32,10 +32,10 @@ settings.pattern = "\\*"
 settings.replace = "."
 [[dataframe.inputs.encoding_steps]]
 algo = "label_encoder"
-settings.file_location = "water_labels.pkl"
+settings.file_location = "pickles/water_labels.pkl"
 [[dataframe.inputs.encoding_steps]]
 algo = "label_binarizer"
-settings.file_location = "water_label_binarizer.pkl"
+settings.file_location = "pickles/water_label_binarizer.pkl"
 
 [[dataframe.outputs]]
 name = "Grass"

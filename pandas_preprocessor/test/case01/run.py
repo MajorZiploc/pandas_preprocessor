@@ -28,7 +28,7 @@ def build():
         for e in es:
             fl = nc(lambda: e['settings']['file_location'])
             if (fl is not None):
-                e['settings']['file_location'] = path.join(this_dir, fl)
+                e['settings']['file_location'] = os.path.join(this_dir, fl)
 
     df = get_dataframe(config['data'])
 

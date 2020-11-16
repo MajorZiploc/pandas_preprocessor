@@ -30,3 +30,6 @@ Change Log
   Adds encoder pickling for label encoder
   Fixes label binarizer
   Renames keep_rows to keep_columns
+  Adds is_use_case flags
+  Adds utils: set_full_paths, load_model
+  Fixes util nc

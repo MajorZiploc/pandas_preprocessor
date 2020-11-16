@@ -1,6 +1,8 @@
 data.connectionstring = "data/Melbourne_housing_FULL.csv"
 data.format = "csv"
 
+model_file_location = "pickles/model.pkl"
+
 dataframe.keep_columns = true
 
 [[dataframe.inputs]]

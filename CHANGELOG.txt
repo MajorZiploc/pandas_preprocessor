@@ -26,3 +26,5 @@ Change Log
 
 0.1.8
   Fixes invert_cleaning encoder process to update the dataframe
+  Adds encoder pickling for label binarizer
+  Adds encoder pickling for label encoder

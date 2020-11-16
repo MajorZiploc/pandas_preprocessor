@@ -16,11 +16,22 @@ class LabelBinarizer(AEncoder):
             joblib.dump(self.encoder, joblib_file)
 
     def transform(self, dataframe):
-        x = self.encoder.transform(dataframe[self.column].to_frame())
-        cs = pd.DataFrame(self.encoder.transform(dataframe[self.column]))\
+        x = self.encoder.transform(dataframe[self.column])
+        cs = pd.DataFrame(x)\
             .add_prefix(self.column+"_")
-        dataframe = dataframe.join(cs)
+        cs.shape
+        indices = [i for i in range(0, len(cs.index))]
+        joinColumn = '___labelbinarizer__index__join_column___'
+        dataframe[joinColumn] = indices
+        # for (columnName, columnData) in cs.iteritems():
+        #     cs[columnName] = pd.to_numeric(
+        #         cs[columnName], downcast='integer')
+
+# the problem is that the indexs of the dataframes dont match.
+        dataframe = dataframe.join(cs, how='inner', on=joinColumn)
+        # dataframe = pd.concat([dataframe, cs], axis=1)
         dataframe.drop(self.column, inplace=True, axis=1)
+        dataframe.drop(joinColumn, inplace=True, axis=1)
         return dataframe
 
     def invert_transform(self, dataframe):

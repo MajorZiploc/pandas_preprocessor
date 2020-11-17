@@ -1,14 +1,14 @@
-from pandas_preprocessor.preprocessors.substitution import Substitution
-from pandas_preprocessor.preprocessors.to_num import ToNum
-from pandas_preprocessor.preprocessors.to_type import ToType
-from pandas_preprocessor.preprocessors.apreprocessor import APreprocessor
-from pandas_preprocessor.preprocessors.to_lower import ToLower
-from pandas_preprocessor.preprocessors.to_upper import ToUpper
-from pandas_preprocessor.preprocessors.mv_mode import MvMode
-from pandas_preprocessor.preprocessors.mv_with import MvWith
-from pandas_preprocessor.preprocessors.mv_mean import MvMean
-from pandas_preprocessor.preprocessors.mv_median import MvMedian
-from pandas_preprocessor.preprocessors.normalize import Normalize
+from pandas_preprocessor.processors.preprocessors.substitution import Substitution
+from pandas_preprocessor.processors.preprocessors.to_num import ToNum
+from pandas_preprocessor.processors.preprocessors.to_type import ToType
+from pandas_preprocessor.processors.preprocessors.apreprocessor import APreprocessor
+from pandas_preprocessor.processors.preprocessors.to_lower import ToLower
+from pandas_preprocessor.processors.preprocessors.to_upper import ToUpper
+from pandas_preprocessor.processors.preprocessors.mv_mode import MvMode
+from pandas_preprocessor.processors.preprocessors.mv_with import MvWith
+from pandas_preprocessor.processors.preprocessors.mv_mean import MvMean
+from pandas_preprocessor.processors.preprocessors.mv_median import MvMedian
+from pandas_preprocessor.processors.preprocessors.normalize import Normalize
 
 preprocessors = {
     'substitution': lambda column, dataframe, settings: Substitution(column, dataframe, settings),

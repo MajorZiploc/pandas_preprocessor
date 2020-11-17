@@ -1,5 +1,5 @@
 import re
-from pandas_preprocessor.preprocessors.apreprocessor import APreprocessor
+from pandas_preprocessor.processors.preprocessors.apreprocessor import APreprocessor
 from functools import reduce
 
 

@@ -1,5 +1,5 @@
 from sklearn import preprocessing
-from pandas_preprocessor.encoders.aencoder import AEncoder
+from pandas_preprocessor.processors.encoders.aencoder import AEncoder
 import pandas as pd
 import joblib
 

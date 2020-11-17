@@ -1,6 +1,6 @@
-from pandas_preprocessor.encoders.label_encoder import LabelEncoder
-from pandas_preprocessor.encoders.one_hot_encoder import OneHotEncoder
-from pandas_preprocessor.encoders.label_binarizer import LabelBinarizer
+from pandas_preprocessor.processors.encoders.label_encoder import LabelEncoder
+from pandas_preprocessor.processors.encoders.one_hot_encoder import OneHotEncoder
+from pandas_preprocessor.processors.encoders.label_binarizer import LabelBinarizer
 
 encoders = {
     'label_encoder': lambda column, dataframe, settings: LabelEncoder(column, dataframe, settings),

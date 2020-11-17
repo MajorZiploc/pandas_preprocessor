@@ -1,7 +1,7 @@
 import pandas as pd
 from pandas_preprocessor.utils import *
-from pandas_preprocessor.preprocessors import *
-from pandas_preprocessor.encoders import *
+from pandas_preprocessor.processors import *
+from pandas_preprocessor.processors.encoders import *
 
 
 def get_dataframe(dataConfig):

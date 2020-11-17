@@ -17,19 +17,30 @@ def nc(supplier):
 def set_full_paths(config, directory):
     config['model_file_location'] = os.path.join(
         directory, config['model_file_location'])
-    if(not nc(lambda: config['input_query']['format']) == 'sql'):
+    inq_format = nc(lambda: config.get('input_query').get('format'))
+    if(inq_format is not None and not inq_format == 'sql'):
         config['input_query']['connectionstring'] = os.path.join(
             directory, config['input_query']['connectionstring'])
-    if(not nc(lambda: config['data']['format']) == 'sql'):
+    d_format = nc(lambda: config.get('data').get('format'))
+    if(d_format is not None and not d_format == 'sql'):
         config['data']['connectionstring'] = os.path.join(
             directory, config['data']['connectionstring'])
+
     inputs = config['dataframe']['inputs']
-    for i in inputs:
-        es = i.get('encoding_steps', [])
-        for e in es:
-            fl = nc(lambda: e['settings']['file_location'])
-            if (fl is not None):
-                e['settings']['file_location'] = os.path.join(directory, fl)
+    outputs = config['dataframe']['outputs']
+
+    def file_location_updater(lst, steps):
+        for l in lst:
+            ss = l.get(steps, [])
+            for s in ss:
+                fl = nc(lambda: s.get('settings').get('file_location'))
+                if (fl is not None):
+                    s['settings']['file_location'] = os.path.join(
+                        directory, fl)
+    file_location_updater(inputs, 'preprocess_steps')
+    file_location_updater(inputs, 'encoding_steps')
+    file_location_updater(outputs, 'preprocess_steps')
+    file_location_updater(outputs, 'encoding_steps')
 
 
 def load_model(config):

@@ -47,3 +47,4 @@ Change Log
 0.2.1
   Adds standardize preprocessor
   Adds params to label binarizer preprocessor
+  Adds kbins_discretizer encoder

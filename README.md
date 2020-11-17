@@ -16,6 +16,7 @@ Remove toml as a dependency
 Remove test folder from export to dist
 Add pickling to label and one hot encoders / one hot encoder will have to use sklearns version
 Consider merging preprocessors and encoders into same flow and config. it may be useful to mix when these steps are done rather than preprocessor then encoder flow
+Add standardization preprocessor with pickling
 
 Notes on Publishing
 pipenv run python setup.py sdist bdist bdist_wheel

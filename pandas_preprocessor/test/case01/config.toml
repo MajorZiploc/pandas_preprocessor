@@ -39,6 +39,20 @@ settings.file_location = "pickles/water_labels.pkl"
 algo = "label_binarizer"
 settings.file_location = "pickles/water_label_binarizer.pkl"
 
+[[dataframe.inputs]]
+name = "Electric"
+ftype = "category"
+[[dataframe.inputs.preprocess_steps]]
+algo = "substitution"
+settings.pattern = "\\*"
+settings.replace = ""
+[[dataframe.inputs.preprocess_steps]]
+algo = "to_num"
+settings.invert_type = "float64"
+[[dataframe.inputs.preprocess_steps]]
+algo = "standardize"
+settings.file_location = "pickles/electric_normalize.pkl"
+
 [[dataframe.outputs]]
 name = "Grass"
 ftype = "category"

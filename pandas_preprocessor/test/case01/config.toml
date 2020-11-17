@@ -81,7 +81,7 @@ settings.invert_type = "float64"
 [[dataframe.outputs.preprocess_steps]]
 algo = "mv_median"
 [[dataframe.outputs.preprocess_steps]]
-algo = "normalize_min_max_scaler"
+algo = "min_max_scaler"
 settings.file_location = "pickles/grass_normalize.pkl"
 [[dataframe.outputs.preprocess_steps]]
 algo = "to_type"

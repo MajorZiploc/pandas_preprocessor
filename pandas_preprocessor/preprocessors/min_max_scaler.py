@@ -3,11 +3,14 @@ from pandas_preprocessor.preprocessors.apreprocessor import APreprocessor
 import pandas as pd
 
 
-class NormalizeMinMaxScaler(APreprocessor):
+class MinMaxScaler(APreprocessor):
 
     def __init__(self, column, dataframe, settings):
         APreprocessor.__init__(self, column, dataframe, settings)
-        self.scaler = preprocessing.MinMaxScaler()
+        self.scaler = preprocessing.MinMaxScaler(
+            feature_range=tuple([0, 1]),
+            copy=True
+        )
         self.pickle_process(dataframe)
 
     def transform(self, dataframe):

@@ -11,6 +11,7 @@ from pandas_preprocessor.preprocessors.mv_median import MvMedian
 from pandas_preprocessor.preprocessors.min_max_scaler import MinMaxScaler
 from pandas_preprocessor.preprocessors.standardize import Standardize
 from pandas_preprocessor.preprocessors.binarizer import Binarizer
+from pandas_preprocessor.preprocessors.normalizer import Normalizer
 
 preprocessors = {
     'substitution': lambda column, dataframe, settings: Substitution(column, dataframe, settings),
@@ -24,7 +25,8 @@ preprocessors = {
     'mv_median': lambda column, dataframe, settings: MvMedian(column, dataframe, settings),
     'min_max_scaler': lambda column, dataframe, settings: MinMaxScaler(column, dataframe, settings),
     'standardize': lambda column, dataframe, settings: Standardize(column, dataframe, settings),
-    'binarizer': lambda column, dataframe, settings: Binarizer(column, dataframe, settings)
+    'binarizer': lambda column, dataframe, settings: Binarizer(column, dataframe, settings),
+    'normalizer': lambda column, dataframe, settings: Normalizer(column, dataframe, settings)
 }
 
 

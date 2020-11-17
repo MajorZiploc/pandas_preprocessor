@@ -3,7 +3,7 @@ from pandas_preprocessor.preprocessors.apreprocessor import APreprocessor
 import pandas as pd
 
 
-class Normalize(APreprocessor):
+class NormalizeMinMaxScaler(APreprocessor):
 
     def __init__(self, column, dataframe, settings):
         APreprocessor.__init__(self, column, dataframe, settings)

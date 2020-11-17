@@ -50,7 +50,7 @@ settings.invert_type = "float64"
 [[dataframe.outputs.preprocess_steps]]
 algo = "mv_median"
 [[dataframe.outputs.preprocess_steps]]
-algo = "normalize"
+algo = "normalize_min_max_scaler"
 [[dataframe.outputs.preprocess_steps]]
 algo = "to_type"
 settings.type = "str"

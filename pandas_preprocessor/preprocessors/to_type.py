@@ -17,8 +17,6 @@ class ToType(APreprocessor):
 
     def invert_transform(self, dataframe):
         ty = self.settings.get('invert_type')
-        if(ty is None):
-            return dataframe
-        else:
+        if(ty is not None):
             dataframe[self.column] = dataframe[self.column].astype(ty)
-            return dataframe
+        return dataframe

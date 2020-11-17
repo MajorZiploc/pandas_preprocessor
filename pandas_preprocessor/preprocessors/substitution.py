@@ -43,6 +43,4 @@ class Substitution(APreprocessor):
         if(p is not None and r is not None):
             dataframe[self.column] = dataframe[self.column].map(
                 lambda string: re.sub(p, r, string, flags=re.I))
-            return dataframe
-        else:
-            return dataframe
+        return dataframe

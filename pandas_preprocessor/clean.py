@@ -50,44 +50,44 @@ def encoderInvert(df, step):
     return df
 
 
-def preprocessorsAction(df, column, is_use_case):
-    ps = column.get('preprocess_steps')
+def processorsAction(df, column, is_use_case):
+    ps = column.get('process_steps')
     if(ps is not None):
         for step in ps:
-            df = preprocessorAction(df, step, column, is_use_case)
+            df = processorAction(df, step, column, is_use_case)
     return df
 
 
-def preprocessorAction(df, step, column, is_use_case):
-    setPreprocessor(df, step, column, is_use_case)
-    return preprocessorTransform(df, step)
+def processorAction(df, step, column, is_use_case):
+    setProcessor(df, step, column, is_use_case)
+    return processorTransform(df, step)
 
 
-def setPreprocessor(df, step, column, is_use_case):
+def setProcessor(df, step, column, is_use_case):
     if(step is not None):
         settings = step.get('settings', {})
         settings['is_use_case'] = is_use_case
-        step['preprocessor'] = preprocessor_selector(
+        step['processor'] = processor_selector(
             step['algo'])(column['name'], df, step.get('settings'))
 
 
-def preprocessorTransform(df, step):
+def processorTransform(df, step):
     if(step is not None):
-        step['preprocessor'].transform(df)
+        step['processor'].transform(df)
     return df
 
 
-def preprocessorsInvert(df, column):
-    ps = column.get('preprocess_steps')
+def processorsInvert(df, column):
+    ps = column.get('process_steps')
     if(ps is not None):
         for step in reversed(ps):
-            df = preprocessorInvert(df, step)
+            df = processorInvert(df, step)
     return df
 
 
-def preprocessorInvert(df, step):
+def processorInvert(df, step):
     if(step is not None):
-        df = step['preprocessor'].invert_transform(df)
+        df = step['processor'].invert_transform(df)
     return df
 
 
@@ -109,7 +109,7 @@ def clean_dataframe(dataframe, dfConfig, is_use_case=False):
         df = dataframe.copy()
 
     for c in specifiedColumn:
-        df = preprocessorsAction(df, c, is_use_case)
+        df = processorsAction(df, c, is_use_case)
 
     for c in specifiedColumn:
         df = encodersAction(df, c, is_use_case)
@@ -130,6 +130,6 @@ def invert_cleaning(dataframe, dfConfig):
         df = encodersInvert(df, c)
 
     for c in specifiedColumn:
-        df = preprocessorsInvert(df, c)
+        df = processorsInvert(df, c)
 
     return df

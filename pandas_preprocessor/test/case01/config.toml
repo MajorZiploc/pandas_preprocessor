@@ -6,31 +6,31 @@ dataframe.keep_other_columns = false
 [[dataframe.inputs]]
 name = "Fire"
 ftype = "category"
-[[dataframe.inputs.preprocess_steps]]
+[[dataframe.inputs.process_steps]]
 algo = "substitution"
 settings.pattern = "\\*"
 settings.replace = "."
 settings.invert_pattern = "^\\."
 settings.invert_replace = "*"
 settings.flags = "i"
-[[dataframe.inputs.encoding_steps]]
+[[dataframe.inputs.process_steps]]
 algo = "label_encoder"
 settings.file_location = "pickles/fire_labels.pkl"
 
 [[dataframe.inputs]]
 name = "Name"
 ftype = "category"
-[[dataframe.inputs.preprocess_steps]]
+[[dataframe.inputs.process_steps]]
 algo = "to_upper"
 
 [[dataframe.inputs]]
 name = "Water"
 ftype = "category"
-[[dataframe.inputs.preprocess_steps]]
+[[dataframe.inputs.process_steps]]
 algo = "substitution"
 settings.pattern = "\\*"
 settings.replace = "."
-[[dataframe.inputs.encoding_steps]]
+[[dataframe.inputs.process_steps]]
 algo = "label_encoder"
 settings.file_location = "pickles/water_labels.pkl"
 [[dataframe.inputs.encoding_steps]]
@@ -40,18 +40,18 @@ settings.file_location = "pickles/water_label_binarizer.pkl"
 [[dataframe.outputs]]
 name = "Grass"
 ftype = "category"
-[[dataframe.outputs.preprocess_steps]]
+[[dataframe.outputs.process_steps]]
 algo = "substitution"
 settings.pattern = "\\*"
 settings.replace = ""
-[[dataframe.outputs.preprocess_steps]]
+[[dataframe.outputs.process_steps]]
 algo = "to_num"
 settings.invert_type = "float64"
-[[dataframe.outputs.preprocess_steps]]
+[[dataframe.outputs.process_steps]]
 algo = "mv_median"
-[[dataframe.outputs.preprocess_steps]]
+[[dataframe.outputs.process_steps]]
 algo = "normalize"
-[[dataframe.outputs.preprocess_steps]]
+[[dataframe.outputs.process_steps]]
 algo = "to_type"
 settings.type = "str"
 settings.invert_type = "float64"

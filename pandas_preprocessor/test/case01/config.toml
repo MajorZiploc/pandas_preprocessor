@@ -53,6 +53,20 @@ settings.invert_type = "float64"
 algo = "standardize"
 settings.file_location = "pickles/electric_normalize.pkl"
 
+[[dataframe.inputs]]
+name = "Ice"
+ftype = "category"
+[[dataframe.inputs.preprocess_steps]]
+algo = "substitution"
+settings.pattern = "\\*"
+settings.replace = ""
+[[dataframe.inputs.preprocess_steps]]
+algo = "to_num"
+settings.invert_type = "float64"
+[[dataframe.inputs.preprocess_steps]]
+algo = "binarizer"
+settings.threshold = 0.51
+
 [[dataframe.outputs]]
 name = "Grass"
 ftype = "category"

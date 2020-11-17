@@ -43,4 +43,7 @@ Change Log
   Renames normalize preprocessor to normalize_min_max_scaler
   Adds pickling to normalize_min_max_scaler preprocessor
   Fixes set_full_paths
+
+0.2.1
   Adds standardize preprocessor
+  Adds params to label binarizer preprocessor

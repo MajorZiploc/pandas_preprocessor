@@ -7,7 +7,11 @@ class LabelBinarizer(AEncoder):
 
     def __init__(self, column, dataframe, settings):
         AEncoder.__init__(self, column, dataframe, settings)
-        self.encoder = preprocessing.LabelBinarizer()
+        self.encoder = preprocessing.LabelBinarizer(
+            neg_label=settings.get('neg_label', 0),
+            pos_label=settings.get('pos_label', 1),
+            sparse_output=settings.get('sparse_output', False)
+        )
         self.pickle_process(dataframe)
 
     def transform(self, dataframe):

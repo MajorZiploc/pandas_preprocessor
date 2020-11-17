@@ -36,3 +36,5 @@ Change Log
 
 0.1.9
   Renames keep_columns to keep_other_columns
+  Renames clean_input to clean_query
+  Adds invert_cleaning_query

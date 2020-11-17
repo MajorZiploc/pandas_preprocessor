@@ -20,7 +20,7 @@ df = get_dataframe(config['input_query'])
 # clean user query for models consumption
 house_data = df.drop(['Address', 'Method', 'SellerG', 'Date',
                       'Postcode', 'Lattitude', 'Longtitude', 'Regionname', 'Propertycount'], axis=1)
-house_data = clean_input(house_data, config['dataframe'])
+house_data = clean_query(house_data, config['dataframe'])
 outputColumnNames = [o['name'] for o in config['dataframe']['outputs']]
 house_to_value = house_data.drop(outputColumnNames, axis=1)
 
@@ -37,7 +37,7 @@ print("This property has an estimated value of AUD %.2f" %
       predicted_house_value)
 
 # Transform user query back to users data structure
-inverted_house_data = invert_cleaning(house_data, config['dataframe'])
+inverted_house_data = invert_cleaning_query(house_data, config['dataframe'])
 
 print('Inverted DF')
 print(inverted_house_data.head())

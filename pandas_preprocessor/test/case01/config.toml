@@ -1,6 +1,8 @@
 data.connectionstring = "data/PokeTypeMatchupData.csv"
 data.format = "csv"
 
+model_file_location = "pickles/model.pkl"
+
 dataframe.keep_other_columns = false
 
 [[dataframe.inputs]]
@@ -37,6 +39,20 @@ settings.file_location = "pickles/water_labels.pkl"
 algo = "label_binarizer"
 settings.file_location = "pickles/water_label_binarizer.pkl"
 
+[[dataframe.inputs]]
+name = "Electric"
+ftype = "category"
+[[dataframe.inputs.preprocess_steps]]
+algo = "substitution"
+settings.pattern = "\\*"
+settings.replace = ""
+[[dataframe.inputs.preprocess_steps]]
+algo = "to_num"
+settings.invert_type = "float64"
+[[dataframe.inputs.preprocess_steps]]
+algo = "standardize"
+settings.file_location = "pickles/electric_normalize.pkl"
+
 [[dataframe.outputs]]
 name = "Grass"
 ftype = "category"
@@ -50,7 +66,8 @@ settings.invert_type = "float64"
 [[dataframe.outputs.preprocess_steps]]
 algo = "mv_median"
 [[dataframe.outputs.preprocess_steps]]
-algo = "normalize"
+algo = "normalize_min_max_scaler"
+settings.file_location = "pickles/grass_normalize.pkl"
 [[dataframe.outputs.preprocess_steps]]
 algo = "to_type"
 settings.type = "str"

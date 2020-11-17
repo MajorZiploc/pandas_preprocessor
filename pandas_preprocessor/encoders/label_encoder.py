@@ -1,6 +1,5 @@
 from sklearn import preprocessing
 from pandas_preprocessor.encoders.aencoder import AEncoder
-import joblib
 
 
 class LabelEncoder(AEncoder):
@@ -8,13 +7,7 @@ class LabelEncoder(AEncoder):
     def __init__(self, column, dataframe, settings):
         AEncoder.__init__(self, column, dataframe, settings)
         self.encoder = preprocessing.LabelEncoder()
-        joblib_file = settings.get('file_location')
-        if(self.settings.get('is_use_case', False)):
-            self.encoder = joblib.load(joblib_file)
-        else:
-            self.encoder.fit(dataframe[self.column])
-            if(joblib_file is not None):
-                joblib.dump(self.encoder, joblib_file)
+        self.pickle_process(dataframe)
 
     def transform(self, dataframe):
         dataframe[self.column] = self.encoder.transform(

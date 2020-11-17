@@ -9,7 +9,7 @@ except IOError:
 
 setup(
     name="pandas_preprocessor",
-    version="0.1.9",
+    version="0.2.0",
     description="A package for preprocessing and encoding columns",
     license="MIT",
     author="manyu",

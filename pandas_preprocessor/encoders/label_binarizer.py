@@ -1,7 +1,6 @@
 from sklearn import preprocessing
 from pandas_preprocessor.encoders.aencoder import AEncoder
 import pandas as pd
-import joblib
 
 
 class LabelBinarizer(AEncoder):
@@ -9,14 +8,7 @@ class LabelBinarizer(AEncoder):
     def __init__(self, column, dataframe, settings):
         AEncoder.__init__(self, column, dataframe, settings)
         self.encoder = preprocessing.LabelBinarizer()
-        joblib_file = settings.get('file_location')
-        if(self.settings.get('is_use_case', False)):
-            self.encoder = joblib.load(joblib_file)
-        else:
-            c = dataframe[self.column].to_frame()
-            self.encoder.fit(c)
-            if(joblib_file is not None):
-                joblib.dump(self.encoder, joblib_file)
+        self.pickle_process(dataframe)
 
     def transform(self, dataframe):
         x = self.encoder.transform(dataframe[self.column])

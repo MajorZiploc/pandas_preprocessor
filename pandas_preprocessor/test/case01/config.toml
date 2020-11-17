@@ -49,9 +49,10 @@ settings.replace = ""
 [[dataframe.inputs.preprocess_steps]]
 algo = "to_num"
 settings.invert_type = "float64"
-[[dataframe.inputs.preprocess_steps]]
-algo = "standardize"
-settings.file_location = "pickles/electric_normalize.pkl"
+[[dataframe.inputs.encoding_steps]]
+algo = "kbins_discretizer"
+settings.n_bins = 2
+settings.file_location = "pickles/electric_kbins_d.pkl"
 
 [[dataframe.inputs]]
 name = "Ice"

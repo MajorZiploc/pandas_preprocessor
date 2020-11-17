@@ -6,7 +6,7 @@ input_query.format = "csv"
 
 model_file_location = "pickles/model.pkl"
 
-dataframe.keep_columns = true
+dataframe.keep_other_columns = true
 
 [[dataframe.inputs]]
 name = "Suburb"

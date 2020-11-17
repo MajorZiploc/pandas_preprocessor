@@ -98,12 +98,12 @@ def clean_input(dataframe, dfConfig):
 def clean_dataframe(dataframe, dfConfig, is_use_case=False):
     inputs = dfConfig['inputs']
     outputs = dfConfig['outputs']
-    dfConfig['keep_columns'] = dfConfig.get('keep_columns', True)
+    dfConfig['keep_other_columns'] = dfConfig.get('keep_other_columns', True)
     specifiedColumn = inputs + outputs
 
     specifiedColumnNames = [i['name'] for i in specifiedColumn]
 
-    if (not dfConfig.get('keep_columns')):
+    if (not dfConfig.get('keep_other_columns')):
         df = dataframe[specifiedColumnNames].copy()
     else:
         df = dataframe.copy()

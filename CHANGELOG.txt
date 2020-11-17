@@ -33,3 +33,6 @@ Change Log
   Adds is_use_case flags
   Adds utils: set_full_paths, load_model
   Fixes util nc
+
+0.1.9
+  Renames keep_columns to keep_other_columns

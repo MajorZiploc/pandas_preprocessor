@@ -7,7 +7,7 @@ class LabelEncoder(AEncoder):
     def __init__(self, column, dataframe, settings):
         AEncoder.__init__(self, column, dataframe, settings)
         self.encoder = preprocessing.LabelEncoder()
-        self.pickle_process(dataframe)
+        self.pickle_process(dataframe, get_column_fn=lambda df, c: df[c])
 
     def transform(self, dataframe):
         dataframe[self.column] = self.encoder.transform(

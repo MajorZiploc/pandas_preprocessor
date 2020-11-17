@@ -8,9 +8,9 @@ class LabelBinarizer(AEncoder):
     def __init__(self, column, dataframe, settings):
         AEncoder.__init__(self, column, dataframe, settings)
         self.encoder = preprocessing.LabelBinarizer(
-            neg_label=settings.get('neg_label', 0),
-            pos_label=settings.get('pos_label', 1),
-            sparse_output=settings.get('sparse_output', False)
+            neg_label=self.settings.get('neg_label', 0),
+            pos_label=self.settings.get('pos_label', 1),
+            sparse_output=self.settings.get('sparse_output', False)
         )
         self.pickle_process(dataframe)
 

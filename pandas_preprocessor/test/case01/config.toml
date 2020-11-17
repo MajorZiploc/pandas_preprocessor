@@ -1,6 +1,8 @@
 data.connectionstring = "data/PokeTypeMatchupData.csv"
 data.format = "csv"
 
+model_file_location = "pickles/model.pkl"
+
 dataframe.keep_other_columns = false
 
 [[dataframe.inputs]]
@@ -51,6 +53,7 @@ settings.invert_type = "float64"
 algo = "mv_median"
 [[dataframe.outputs.preprocess_steps]]
 algo = "normalize_min_max_scaler"
+settings.file_location = "pickles/grass_normalize.pkl"
 [[dataframe.outputs.preprocess_steps]]
 algo = "to_type"
 settings.type = "str"

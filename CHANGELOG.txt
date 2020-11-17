@@ -50,3 +50,4 @@ Change Log
   Adds kbins_discretizer encoder
   Renames normalize_min_max_scaler to min_max_scaler preprocessor
   Adds params to min_max_scaler preprocessor
+  Adds normalizer preprocessor

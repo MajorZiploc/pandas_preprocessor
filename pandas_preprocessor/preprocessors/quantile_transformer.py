@@ -8,15 +8,16 @@ class QuantileTransformer(APreprocessor):
     def __init__(self, column, dataframe, settings):
         APreprocessor.__init__(self, column, dataframe, settings)
         self.scaler = preprocessing.QuantileTransformer(
-            n_quantiles=settings.get('n_quantiles', 1000),
-            output_distribution=settings.get('output_distribution', 'uniform'),
-            ignore_implicit_zeros=settings.get(
+            n_quantiles=self.settings.get('n_quantiles', 1000),
+            output_distribution=self.settings.get(
+                'output_distribution', 'uniform'),
+            ignore_implicit_zeros=self.settings.get(
                 'ignore_implicit_zeros', False),
-            subsample=settings.get(
+            subsample=self.settings.get(
                 'subsample', 100000),
-            random_state=settings.get(
+            random_state=self.settings.get(
                 'random_state', None),
-            copy=settings.get('copy', True)
+            copy=self.settings.get('copy', True)
         )
         self.pickle_process(dataframe)
 

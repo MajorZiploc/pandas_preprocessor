@@ -10,8 +10,8 @@ class Normalizer(APreprocessor):
     def __init__(self, column, dataframe, settings):
         APreprocessor.__init__(self, column, dataframe, settings)
         self.scaler = preprocessing.Normalizer(
-            norm=settings.get('norm', 'l2'),
-            copy=settings.get('copy', True)
+            norm=self.settings.get('norm', 'l2'),
+            copy=self.settings.get('copy', True)
         )
 
     def transform(self, dataframe):

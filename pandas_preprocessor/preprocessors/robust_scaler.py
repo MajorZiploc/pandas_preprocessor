@@ -8,11 +8,11 @@ class RobustScaler(APreprocessor):
     def __init__(self, column, dataframe, settings):
         APreprocessor.__init__(self, column, dataframe, settings)
         self.scaler = preprocessing.RobustScaler(
-            with_centering=settings.get('with_centering', True),
-            with_scaling=settings.get('with_scaling', True),
-            quantile_range=settings.get(
+            with_centering=self.settings.get('with_centering', True),
+            with_scaling=self.settings.get('with_scaling', True),
+            quantile_range=self.settings.get(
                 'quantile_range', tuple([25.0, 75.0])),
-            copy=settings.get('copy', True)
+            copy=self.settings.get('copy', True)
         )
         self.pickle_process(dataframe)
 

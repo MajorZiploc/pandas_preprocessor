@@ -8,8 +8,8 @@ class MinMaxScaler(APreprocessor):
     def __init__(self, column, dataframe, settings):
         APreprocessor.__init__(self, column, dataframe, settings)
         self.scaler = preprocessing.MinMaxScaler(
-            feature_range=settings.get('feature_range', tuple([0, 1])),
-            copy=settings.get('copy', True)
+            feature_range=self.settings.get('feature_range', tuple([0, 1])),
+            copy=self.settings.get('copy', True)
         )
         self.pickle_process(dataframe)
 

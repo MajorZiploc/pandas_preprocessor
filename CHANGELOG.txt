@@ -61,4 +61,4 @@ Change Log
   Removes one_hot encoder. It was not using sklearn and could not be pickled
   Adds power_transformer preprocessor
   Adds quantile_transformer preprocessor
-  
+  Adds polynomial_features preprocessor

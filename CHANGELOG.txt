@@ -58,3 +58,4 @@ Change Log
   Fixes max_abs_scaler and min_max_scaler, params were not being passed in
 
 0.2.2
+  Removes one_hot encoder. It was not using sklearn and could not be pickled

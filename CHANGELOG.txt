@@ -54,3 +54,4 @@ Change Log
   Fixes label_encoder warning related to the pickling process
   Adds max_abs_scaler preprocessor
   Renames standardize preprocessor to standard_scaler
+  Adds robust_scaler preprocessor

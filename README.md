@@ -18,6 +18,7 @@ Add pickling to label and one hot encoders / one hot encoder will have to use sk
 Consider merging preprocessors and encoders into same flow and config. it may be useful to mix when these steps are done rather than preprocessor then encoder flow
 Add settings params for each encoder and preprocessing based on sklearn docs
 Decide on whether some preprocessors should be skipped when processing the user query. Does it make sense to use missing value preprocessors on it? If so, they should be pickled from building the model. If not, then their should be a flag, or reuse the is_use_case flag to skip the transformation
+Consider creating a config.toml scaffolding function. Given a dataframe, it creates a config.toml
 
 Notes on Publishing
 pipenv run python setup.py sdist bdist bdist_wheel

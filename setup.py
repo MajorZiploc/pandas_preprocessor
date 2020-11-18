@@ -12,7 +12,7 @@ setup(
     version="0.2.0",
     description="A package for preprocessing and encoding columns",
     license="MIT",
-    author="manyu",
+    author="Manyu Lakhotia",
     packages=find_packages(
         include=['pandas_preprocessor', 'pandas_preprocessor.*', 'dist']),
     long_description=long_description,

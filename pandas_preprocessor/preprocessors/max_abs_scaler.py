@@ -7,7 +7,8 @@ class MaxAbsScaler(APreprocessor):
 
     def __init__(self, column, dataframe, settings):
         APreprocessor.__init__(self, column, dataframe, settings)
-        self.scaler = preprocessing.MaxAbsScaler(copy=True)
+        self.scaler = preprocessing.MaxAbsScaler(
+            copy=settings.get('copy', True))
         self.pickle_process(dataframe)
 
     def transform(self, dataframe):

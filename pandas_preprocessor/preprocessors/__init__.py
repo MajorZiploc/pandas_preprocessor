@@ -14,6 +14,7 @@ from pandas_preprocessor.preprocessors.binarizer import Binarizer
 from pandas_preprocessor.preprocessors.normalizer import Normalizer
 from pandas_preprocessor.preprocessors.max_abs_scaler import MaxAbsScaler
 from pandas_preprocessor.preprocessors.robust_scaler import RobustScaler
+from pandas_preprocessor.preprocessors.power_transformer import PowerTransformer
 
 preprocessors = {
     'substitution': lambda column, dataframe, settings: Substitution(column, dataframe, settings),
@@ -30,8 +31,8 @@ preprocessors = {
     'binarizer': lambda column, dataframe, settings: Binarizer(column, dataframe, settings),
     'normalizer': lambda column, dataframe, settings: Normalizer(column, dataframe, settings),
     'max_abs_scaler': lambda column, dataframe, settings: MaxAbsScaler(column, dataframe, settings),
-    'robust_scaler': lambda column, dataframe, settings: RobustScaler(column, dataframe, settings)
-
+    'robust_scaler': lambda column, dataframe, settings: RobustScaler(column, dataframe, settings),
+    'power_transformer': lambda column, dataframe, settings: PowerTransformer(column, dataframe, settings)
 }
 
 

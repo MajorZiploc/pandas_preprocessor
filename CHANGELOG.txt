@@ -59,3 +59,4 @@ Change Log
 
 0.2.2
   Removes one_hot encoder. It was not using sklearn and could not be pickled
+  Adds power_transformer preprocessor

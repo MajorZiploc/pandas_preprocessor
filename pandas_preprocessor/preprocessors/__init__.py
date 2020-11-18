@@ -9,7 +9,7 @@ from pandas_preprocessor.preprocessors.mv_with import MvWith
 from pandas_preprocessor.preprocessors.mv_mean import MvMean
 from pandas_preprocessor.preprocessors.mv_median import MvMedian
 from pandas_preprocessor.preprocessors.min_max_scaler import MinMaxScaler
-from pandas_preprocessor.preprocessors.standardize import Standardize
+from pandas_preprocessor.preprocessors.standard_scaler import StandardScaler
 from pandas_preprocessor.preprocessors.binarizer import Binarizer
 from pandas_preprocessor.preprocessors.normalizer import Normalizer
 from pandas_preprocessor.preprocessors.max_abs_scaler import MaxAbsScaler
@@ -25,7 +25,7 @@ preprocessors = {
     'mv_mean': lambda column, dataframe, settings: MvMean(column, dataframe, settings),
     'mv_median': lambda column, dataframe, settings: MvMedian(column, dataframe, settings),
     'min_max_scaler': lambda column, dataframe, settings: MinMaxScaler(column, dataframe, settings),
-    'standardize': lambda column, dataframe, settings: Standardize(column, dataframe, settings),
+    'standard_scaler': lambda column, dataframe, settings: StandardScaler(column, dataframe, settings),
     'binarizer': lambda column, dataframe, settings: Binarizer(column, dataframe, settings),
     'normalizer': lambda column, dataframe, settings: Normalizer(column, dataframe, settings),
     'max_abs_scaler': lambda column, dataframe, settings: MaxAbsScaler(column, dataframe, settings)

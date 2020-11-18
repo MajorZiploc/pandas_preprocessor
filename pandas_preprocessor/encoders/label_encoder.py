@@ -5,6 +5,8 @@ from pandas_preprocessor.encoders.aencoder import AEncoder
 class LabelEncoder(AEncoder):
 
     def __init__(self, column, dataframe, settings):
+        # labelencoder has a problem when the indices dont come in order
+        # example:  if some are droped by mv_drop
         AEncoder.__init__(self, column, dataframe, settings)
         self.encoder = preprocessing.LabelEncoder()
         self.pickle_process(dataframe, get_column_fn=lambda df, c: df[c])

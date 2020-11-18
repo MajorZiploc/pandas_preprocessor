@@ -17,6 +17,7 @@ from pandas_preprocessor.preprocessors.robust_scaler import RobustScaler
 from pandas_preprocessor.preprocessors.power_transformer import PowerTransformer
 from pandas_preprocessor.preprocessors.quantile_transformer import QuantileTransformer
 from pandas_preprocessor.preprocessors.polynomial_features import PolynomialFeatures
+from pandas_preprocessor.preprocessors.mv_drop import MvDrop
 
 preprocessors = {
     'substitution': lambda column, dataframe, settings: Substitution(column, dataframe, settings),
@@ -36,7 +37,8 @@ preprocessors = {
     'robust_scaler': lambda column, dataframe, settings: RobustScaler(column, dataframe, settings),
     'power_transformer': lambda column, dataframe, settings: PowerTransformer(column, dataframe, settings),
     'quantile_transformer': lambda column, dataframe, settings: QuantileTransformer(column, dataframe, settings),
-    'polynomial_features': lambda column, dataframe, settings: PolynomialFeatures(column, dataframe, settings)
+    'polynomial_features': lambda column, dataframe, settings: PolynomialFeatures(column, dataframe, settings),
+    'mv_drop': lambda column, dataframe, settings: MvDrop(column, dataframe, settings)
 }
 
 

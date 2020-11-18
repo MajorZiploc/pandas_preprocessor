@@ -12,6 +12,7 @@ from pandas_preprocessor.preprocessors.min_max_scaler import MinMaxScaler
 from pandas_preprocessor.preprocessors.standardize import Standardize
 from pandas_preprocessor.preprocessors.binarizer import Binarizer
 from pandas_preprocessor.preprocessors.normalizer import Normalizer
+from pandas_preprocessor.preprocessors.max_abs_scaler import MaxAbsScaler
 
 preprocessors = {
     'substitution': lambda column, dataframe, settings: Substitution(column, dataframe, settings),
@@ -26,7 +27,8 @@ preprocessors = {
     'min_max_scaler': lambda column, dataframe, settings: MinMaxScaler(column, dataframe, settings),
     'standardize': lambda column, dataframe, settings: Standardize(column, dataframe, settings),
     'binarizer': lambda column, dataframe, settings: Binarizer(column, dataframe, settings),
-    'normalizer': lambda column, dataframe, settings: Normalizer(column, dataframe, settings)
+    'normalizer': lambda column, dataframe, settings: Normalizer(column, dataframe, settings),
+    'max_abs_scaler': lambda column, dataframe, settings: MaxAbsScaler(column, dataframe, settings)
 }
 
 

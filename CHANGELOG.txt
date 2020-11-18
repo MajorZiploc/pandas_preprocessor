@@ -70,6 +70,4 @@ Change Log
 
 0.2.5
   Adds more errors to nc function. handles AttributeError, KeyError, and TypeError
-
-0.2.6
   Missing Value preprocessors now are skipped if its for a use case

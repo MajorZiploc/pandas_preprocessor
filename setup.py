@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 try:
     long_description = open("README.rst").read()
 except IOError:
-    long_description = ""
+    long_description = "Please visit the github page for documentation. https://github.com/MajorZiploc/pandas_preprocessor"
 
 setup(
     name="pandas_preprocessor",

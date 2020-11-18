@@ -22,6 +22,8 @@ def build():
 
     df = get_dataframe(config['data'])
 
+    # df.dropna(axis=0, how='any', thresh=None, subset=None, inplace=True)
+
     print('OG DF')
     p(df)
 

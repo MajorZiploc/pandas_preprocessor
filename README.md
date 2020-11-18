@@ -22,7 +22,7 @@ Validate that all sklearn class are using the correct and all params in construc
 Add error handling to selecting preprocessor and encoders with message of what the available transforms are
 Adds means to add to the preprocessor and encoder dictionaries. It should not let the user add/reassign keys that already exist in the dictionary
 Improve project documentation that shows on pypi and github page
-labelencoder has a problem when the indices dont come in order. example: if some are droped by mv_drop
+Stacking encoders can lead to strange problems!!!! labelencoder has a problem when the indices dont come in order. example: if some are droped by mv_drop
 
 Notes on Publishing
 pipenv run python setup.py sdist bdist bdist_wheel

@@ -43,4 +43,10 @@ preprocessors = {
 
 
 def preprocessor_selector(algoName):
-    return preprocessors.get(algoName)
+    try:
+        return preprocessors[algoName]
+    except KeyError:
+        raise KeyError(
+            '%s is not an available preprocessor. Here is a list of available preprocessors: %s'
+            % (algoName, [k for k in preprocessors.keys()])
+        )

@@ -10,4 +10,10 @@ encoders = {
 
 
 def encoder_selector(algoName):
-    return encoders.get(algoName)
+    try:
+        return encoders[algoName]
+    except KeyError:
+        raise KeyError(
+            '%s is not an available encoder. Here is a list of available preprocessors: %s'
+            % (algoName, [k for k in encoders.keys()])
+        )

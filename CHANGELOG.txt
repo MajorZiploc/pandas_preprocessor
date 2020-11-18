@@ -55,3 +55,4 @@ Change Log
   Adds max_abs_scaler preprocessor
   Renames standardize preprocessor to standard_scaler
   Adds robust_scaler preprocessor
+  Fixes max_abs_scaler and min_max_scaler, params were not being passed in

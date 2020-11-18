@@ -10,7 +10,7 @@ def foreach(action, iterable):
 def nc(supplier):
     try:
         return supplier()
-    except AttributeError:
+    except (AttributeError, KeyError, TypeError):
         return None
 
 

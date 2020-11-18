@@ -64,7 +64,7 @@ class DFCleaningHelper(object):
 
     def preprocessorTransform(self, df, step):
         if(step is not None):
-            step['preprocessor'].transform(df)
+            df = step['preprocessor'].transform(df)
         return df
 
     def preprocessorsInvert(self, df, column):

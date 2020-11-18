@@ -2,6 +2,9 @@ import joblib
 
 
 class APreprocessor(object):
+    """
+    A class to be inherited in order to make a preprocessor
+    """
 
     def __init__(self, column, dataframe, settings):
         self.column = column

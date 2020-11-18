@@ -2,6 +2,8 @@ from sklearn import preprocessing
 from pandas_preprocessor.encoders.aencoder import AEncoder
 import pandas as pd
 
+# NOTE: invert_transform not supported
+
 
 class Binarizer(AEncoder):
 

@@ -1,5 +1,7 @@
 from pandas_preprocessor.preprocessors.apreprocessor import APreprocessor
 
+# NOTE: invert_transform not supported
+
 
 class MvWith(APreprocessor):
 
@@ -7,8 +9,6 @@ class MvWith(APreprocessor):
         APreprocessor.__init__(self, column, dataframe, settings)
 
     def transform(self, dataframe):
-        dataframe[self.column] = dataframe[self.column].fillna(self.settings.get('value'))
-        return dataframe
-
-    def invert_transform(self, dataframe):
+        dataframe[self.column] = dataframe[self.column].fillna(
+            self.settings.get('value'))
         return dataframe

@@ -64,4 +64,4 @@ Change Log
   Adds polynomial_features preprocessor
   Fixes preprocessor transform flow bug
   Adds mv_drop preprocessor
-  
+  Adds more errors to nc function. handles AttributeError, KeyError, and TypeError

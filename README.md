@@ -1,6 +1,12 @@
-# To build project:
+# Install for use in python project
 
-requires pipenv, python 3.8
+> pip install pandas-preprocessor  
+> or  
+> pipenv install pandas-preprocessor
+
+## Requires python 3.8
+
+# To build project:
 
 In project root:
 

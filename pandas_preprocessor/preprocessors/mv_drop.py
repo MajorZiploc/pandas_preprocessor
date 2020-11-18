@@ -9,5 +9,6 @@ class MvDrop(APreprocessor):
         APreprocessor.__init__(self, column, dataframe, settings)
 
     def transform(self, dataframe):
-        df = dataframe[dataframe[self.column].notnull()]
+        if(settings.get('is_use_case', False)):
+            df = dataframe[dataframe[self.column].notnull()]
         return df

@@ -9,21 +9,21 @@ encoders = {
 }
 
 
-def add_encoder(algoName, encoder_supplier):
-    if (algoName not in encoders):
-        encoders[algoName] = encoder_supplier
+def add_encoder(algo_name, encoder_supplier):
+    if (algo_name not in encoders):
+        encoders[algo_name] = encoder_supplier
     else:
         raise Exception(
             '%s is already an encoder. Try using a different name. Here is a list of existing encoders: %s'
-            % (algoName, [k for k in encoders.keys()])
+            % (algo_name, [k for k in encoders.keys()])
         )
 
 
-def encoder_selector(algoName):
+def encoder_selector(algo_name):
     try:
-        return encoders[algoName]
+        return encoders[algo_name]
     except KeyError:
         raise KeyError(
             '%s is not an available encoder. Here is a list of available preprocessors: %s'
-            % (algoName, [k for k in encoders.keys()])
+            % (algo_name, [k for k in encoders.keys()])
         )

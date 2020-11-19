@@ -19,6 +19,7 @@ from pandas_preprocessor.preprocessors.quantile_transformer import QuantileTrans
 from pandas_preprocessor.preprocessors.polynomial_features import PolynomialFeatures
 from pandas_preprocessor.preprocessors.mv_drop import MvDrop
 from pandas_preprocessor.preprocessors.date_to_ordinal import DateToOrdinal
+from pandas_preprocessor.preprocessors.abs import Abs
 
 preprocessors = {
     'substitution': lambda column, dataframe, settings: Substitution(column, dataframe, settings),
@@ -40,7 +41,8 @@ preprocessors = {
     'quantile_transformer': lambda column, dataframe, settings: QuantileTransformer(column, dataframe, settings),
     'polynomial_features': lambda column, dataframe, settings: PolynomialFeatures(column, dataframe, settings),
     'mv_drop': lambda column, dataframe, settings: MvDrop(column, dataframe, settings),
-    'date_to_ordinal': lambda column, dataframe, settings: DateToOrdinal(column, dataframe, settings)
+    'date_to_ordinal': lambda column, dataframe, settings: DateToOrdinal(column, dataframe, settings),
+    'abs': lambda column, dataframe, settings: Abs(column, dataframe, settings)
 }
 
 

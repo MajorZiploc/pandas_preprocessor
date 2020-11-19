@@ -29,6 +29,8 @@ set_full_paths(config, this_dir)
 # get training/test data
 df = get_dataframe(config['data'])
 
+p(df)
+
 r = clean_dataframe(df, config['dataframe'])
 
 print('Cleaned DF')

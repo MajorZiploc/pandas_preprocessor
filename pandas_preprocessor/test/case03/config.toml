@@ -15,4 +15,7 @@ algo = "date_to_ordinal"
 settings.date_format = "%m/%d/%y"
 
 [[dataframe.outputs]]
-name = "morning_weight"
+name = "calories"
+settings.date_format = "integer"
+[[dataframe.outputs.preprocess_steps]]
+algo = "abs"

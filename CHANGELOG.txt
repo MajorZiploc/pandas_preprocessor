@@ -81,3 +81,4 @@ Change Log
   Adds date_to_ordinal preprocessor
 
 0.2.8
+  Adds abs preprocessor

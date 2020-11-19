@@ -1,3 +1,6 @@
 {
-  "python.pythonPath": "/home/manyu/.local/share/virtualenvs/pandas_preprocessor-sqfoomGo/bin/python"
+  "python.pythonPath": "/home/manyu/.local/share/virtualenvs/pandas_preprocessor-sqfoomGo/bin/python",
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}/pandas_preprocessor"
+  ]
 }

@@ -24,4 +24,7 @@ algo = "add"
 settings.value = 2
 [[dataframe.outputs.preprocess_steps]]
 algo = "mult"
-settings.value = 1.5
+settings.value = 2
+[[dataframe.outputs.preprocess_steps]]
+algo = "div_by"
+settings.value = 2

@@ -30,7 +30,7 @@ packages=find_packages(include=['pandas_preprocessor', 'pandas_preprocessor.*'])
 - Adds means to add to the preprocessor and encoder dictionaries. It should not let the user add/reassign keys that already exist in the dictionary
 - Improve project documentation that shows on pypi and github page
 - Stacking encoders can lead to strange problems!!!! labelencoder has a problem when the indices dont come in order. example: if some are droped by mv_drop
-- Add minus, mult, and div_by preprocessors
+- Add minus preprocessor
 - Add prefix and suffix preprocessors
 - Add split_on preprocessor which takes a column and splits it into two based on some string
 - Add filter preprocessor. Keeps values of a certain form

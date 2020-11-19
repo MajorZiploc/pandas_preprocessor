@@ -22,6 +22,7 @@ from pandas_preprocessor.preprocessors.date_to_ordinal import DateToOrdinal
 from pandas_preprocessor.preprocessors.abs import Abs
 from pandas_preprocessor.preprocessors.add import Add
 from pandas_preprocessor.preprocessors.mult import Mult
+from pandas_preprocessor.preprocessors.div_by import DivBy
 
 preprocessors = {
     'substitution': lambda column, dataframe, settings: Substitution(column, dataframe, settings),
@@ -46,7 +47,8 @@ preprocessors = {
     'date_to_ordinal': lambda column, dataframe, settings: DateToOrdinal(column, dataframe, settings),
     'abs': lambda column, dataframe, settings: Abs(column, dataframe, settings),
     'add': lambda column, dataframe, settings: Add(column, dataframe, settings),
-    'mult': lambda column, dataframe, settings: Mult(column, dataframe, settings)
+    'mult': lambda column, dataframe, settings: Mult(column, dataframe, settings),
+    'div_by': lambda column, dataframe, settings: DivBy(column, dataframe, settings)
 }
 
 

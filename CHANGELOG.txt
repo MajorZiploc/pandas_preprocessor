@@ -78,3 +78,4 @@ Change Log
 
 0.2.7
   Adds safe addition to encoders and preprocessors
+  Adds date_to_ordinal preprocessor

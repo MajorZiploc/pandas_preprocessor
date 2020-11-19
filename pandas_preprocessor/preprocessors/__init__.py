@@ -42,6 +42,16 @@ preprocessors = {
 }
 
 
+def add_preprocessor(algoName, preprocessor_supplier):
+    if (algoName not in preprocessors):
+        preprocessors[algoName] = preprocessor_supplier
+    else:
+        raise Exception(
+            '%s is already an encoder. Try using a different name. Here is a list of existing encoders: %s'
+            % (algoName, [k for k in preprocessors.keys()])
+        )
+
+
 def preprocessor_selector(algoName):
     try:
         return preprocessors[algoName]

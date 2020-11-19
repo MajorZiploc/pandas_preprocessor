@@ -75,3 +75,6 @@ Change Log
 0.2.6
   Fixes Missing Value preprocessors
   Adds encoder/preprocessor error handling for when you attempt to use a processor that does not exist
+
+0.2.7
+  Adds safe addition to encoders and preprocessors

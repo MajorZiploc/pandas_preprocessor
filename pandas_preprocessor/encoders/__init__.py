@@ -9,6 +9,16 @@ encoders = {
 }
 
 
+def add_encoder(algoName, encoder_supplier):
+    if (algoName not in encoders):
+        encoders[algoName] = encoder_supplier
+    else:
+        raise Exception(
+            '%s is already an encoder. Try using a different name. Here is a list of existing encoders: %s'
+            % (algoName, [k for k in encoders.keys()])
+        )
+
+
 def encoder_selector(algoName):
     try:
         return encoders[algoName]

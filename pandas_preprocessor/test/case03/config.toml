@@ -21,4 +21,7 @@ settings.date_format = "integer"
 algo = "abs"
 [[dataframe.outputs.preprocess_steps]]
 algo = "add"
-settings.value = 4000
+settings.value = 2
+[[dataframe.outputs.preprocess_steps]]
+algo = "mult"
+settings.value = 1.5

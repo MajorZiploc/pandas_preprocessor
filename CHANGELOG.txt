@@ -83,3 +83,4 @@ Change Log
 0.2.8
   Adds abs preprocessor
   Adds add preprocessor
+  Adds mult preprocessor

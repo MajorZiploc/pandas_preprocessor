@@ -20,6 +20,7 @@ from pandas_preprocessor.preprocessors.polynomial_features import PolynomialFeat
 from pandas_preprocessor.preprocessors.mv_drop import MvDrop
 from pandas_preprocessor.preprocessors.date_to_ordinal import DateToOrdinal
 from pandas_preprocessor.preprocessors.abs import Abs
+from pandas_preprocessor.preprocessors.add import Add
 
 preprocessors = {
     'substitution': lambda column, dataframe, settings: Substitution(column, dataframe, settings),
@@ -42,7 +43,8 @@ preprocessors = {
     'polynomial_features': lambda column, dataframe, settings: PolynomialFeatures(column, dataframe, settings),
     'mv_drop': lambda column, dataframe, settings: MvDrop(column, dataframe, settings),
     'date_to_ordinal': lambda column, dataframe, settings: DateToOrdinal(column, dataframe, settings),
-    'abs': lambda column, dataframe, settings: Abs(column, dataframe, settings)
+    'abs': lambda column, dataframe, settings: Abs(column, dataframe, settings),
+    'add': lambda column, dataframe, settings: Add(column, dataframe, settings)
 }
 
 

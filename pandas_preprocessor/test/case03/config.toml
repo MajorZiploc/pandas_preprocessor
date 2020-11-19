@@ -19,3 +19,6 @@ name = "calories"
 settings.date_format = "integer"
 [[dataframe.outputs.preprocess_steps]]
 algo = "abs"
+[[dataframe.outputs.preprocess_steps]]
+algo = "add"
+settings.value = 4000

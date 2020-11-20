@@ -28,6 +28,7 @@ from pandas_preprocessor.preprocessors.rtrim import RTrim
 from pandas_preprocessor.preprocessors.trim import Trim
 from pandas_preprocessor.preprocessors.prefix import Prefix
 from pandas_preprocessor.preprocessors.suffix import Suffix
+from pandas_preprocessor.preprocessors.keep import Keep
 
 preprocessors = {
     'substitution': Substitution,
@@ -58,7 +59,8 @@ preprocessors = {
     'rtrim': RTrim,
     'trim': Trim,
     'prefix': Prefix,
-    'suffix': Suffix
+    'suffix': Suffix,
+    'keep': Keep
 }
 
 

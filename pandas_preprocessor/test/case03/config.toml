@@ -17,20 +17,13 @@ settings.date_format = "%m/%d/%y"
 [[dataframe.inputs]]
 name = "muscle_mass_percentage"
 [[dataframe.inputs.preprocess_steps]]
+algo = "mv_drop"
+[[dataframe.inputs.preprocess_steps]]
 algo = "to_type"
 settings.type = "str"
 [[dataframe.inputs.preprocess_steps]]
-algo = "trim"
-[[dataframe.inputs.preprocess_steps]]
-algo = "ltrim"
-[[dataframe.inputs.preprocess_steps]]
-algo = "rtrim"
-[[dataframe.inputs.preprocess_steps]]
-algo = "prefix"
-settings.value = "Mr. "
-[[dataframe.inputs.preprocess_steps]]
-algo = "suffix"
-settings.value = " jr"
+algo = "keep"
+settings.pattern = "a"
 
 [[dataframe.outputs]]
 name = "calories"

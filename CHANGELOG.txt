@@ -90,3 +90,5 @@ Change Log
   Adds suffix preprocessor
   Adds keep preprocessor
   Fixes mv preprocessors to run on build and not on use cases
+  Adds pd.options.mode.chained_assignment = None. This suppresses a warning
+  Adds remove preprocessor

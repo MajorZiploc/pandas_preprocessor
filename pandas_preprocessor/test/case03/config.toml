@@ -22,8 +22,8 @@ algo = "mv_drop"
 algo = "to_type"
 settings.type = "str"
 [[dataframe.inputs.preprocess_steps]]
-algo = "keep"
-settings.pattern = "a"
+algo = "remove"
+settings.pattern = "[a-z]"
 
 [[dataframe.outputs]]
 name = "calories"

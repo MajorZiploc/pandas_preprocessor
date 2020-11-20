@@ -6,7 +6,6 @@ class DateToOrdinal(APreprocessor):
 
     def __init__(self, column, dataframe, settings):
         APreprocessor.__init__(self, column, dataframe, settings)
-        print(self.settings)
 
     def transform(self, dataframe):
         def to_date(date_time_str):

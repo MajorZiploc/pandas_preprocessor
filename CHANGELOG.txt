@@ -92,3 +92,5 @@ Change Log
   Fixes mv preprocessors to run on build and not on use cases
   Adds pd.options.mode.chained_assignment = None. This suppresses a warning
   Adds remove preprocessor
+
+0.2.9

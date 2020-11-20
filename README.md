@@ -34,6 +34,8 @@ packages=find_packages(include=['pandas_preprocessor', 'pandas_preprocessor.*'])
 - Add prefix and suffix preprocessors
 - Add split_on preprocessor which takes a column and splits it into two based on some string
 - Add filter preprocessor. Keeps values of a certain form.. name: keep and remove . might want regex versions and others
+- Resolve regex issues with regex using preprocessors
+- trim preprocessors and suffix and prefix have a dataframe copy problem
 
 # Notes on Publishing
 

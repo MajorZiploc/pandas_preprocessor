@@ -9,7 +9,7 @@ class MvWith(APreprocessor):
         APreprocessor.__init__(self, column, dataframe, settings)
 
     def transform(self, dataframe):
-        if(self.settings.get('is_use_case', False)):
+        if(not self.settings.get('is_use_case', False)):
             dataframe[self.column] = dataframe[self.column].fillna(
                 self.settings.get('value'))
         return dataframe

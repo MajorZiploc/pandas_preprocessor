@@ -88,3 +88,5 @@ Change Log
   Adds trim, rtrim, ltrim preprocessors
   Adds prefix preprocessor
   Adds suffix preprocessor
+  Adds keep preprocessor
+  Fixes mv preprocessors to run on build and not on use cases

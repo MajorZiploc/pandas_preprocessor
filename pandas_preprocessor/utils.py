@@ -1,5 +1,7 @@
 import os
 import joblib
+import re
+from functools import reduce
 
 
 def foreach(action, iterable):
@@ -47,6 +49,25 @@ def load_model(config):
     model_file = config['model_file_location']
     model = joblib.load(model_file)
     return model
+
+
+def str_flags_to_regex_flags(str_flags):
+    flag_map = {
+        "i": re.IGNORECASE,
+        "x": re.VERBOSE,
+        "m": re.MULTILINE,
+        "s": re.DOTALL,
+        "u": re.UNICODE,
+        "l": re.LOCALE,
+        "d": re.DEBUG,
+        "a": re.ASCII,
+        "t": re.TEMPLATE
+    }
+
+    def r(acc, ele):
+        acc = acc | ele
+        return acc
+    return reduce(r, [flag_map[f] for f in str_flags])
 
 # df1 = r
 # df2 = r.dropna(axis=0, how='any', thresh=None, subset=None)

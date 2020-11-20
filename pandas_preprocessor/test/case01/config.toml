@@ -17,7 +17,7 @@ settings.invert_replace = "*"
 settings.flags = "i"
 [[dataframe.inputs.encoding_steps]]
 algo = "label_encoder"
-settings.file_location = "pickles/water_label_encoder.pkl"
+settings.file_location = "pickles/fire_label_encoder.pkl"
 
 [[dataframe.inputs]]
 name = "Fighting"

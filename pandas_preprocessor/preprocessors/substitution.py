@@ -1,6 +1,6 @@
 import re
 from pandas_preprocessor.preprocessors.apreprocessor import APreprocessor
-from functools import reduce
+from pandas_preprocessor.utils import str_flags_to_regex_flags
 
 
 class Substitution(APreprocessor):
@@ -8,25 +8,10 @@ class Substitution(APreprocessor):
     def __init__(self, column, dataframe, settings):
         APreprocessor.__init__(self, column, dataframe, settings)
 
-        self.flag_map = {
-            "i": re.IGNORECASE,
-            "x": re.VERBOSE,
-            "m": re.MULTILINE,
-            "s": re.DOTALL,
-            "u": re.UNICODE,
-            "l": re.LOCALE,
-            "d": re.DEBUG,
-            "a": re.ASCII,
-            "t": re.TEMPLATE
-        }
-
     def transform(self, dataframe):
         def fnWithFlags(string):
-            def r(acc, ele):
-                acc = acc | ele
-                return acc
             flags = self.settings.get('flags').lower()
-            return re.sub(self.settings['pattern'], self.settings['replace'], string, flags=reduce(r, [self.flag_map[f] for f in flags]))
+            return re.sub(self.settings['pattern'], self.settings['replace'], string, flags=str_flags_to_regex_flags(flags))
 
         def fnWithoutFlags(string):
             return re.sub(self.settings['pattern'], self.settings['replace'], string)

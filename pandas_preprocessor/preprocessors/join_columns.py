@@ -17,8 +17,8 @@ class JoinColumns(APreprocessor):
         return dataframe
 
     def invert_transform(self, dataframe):
-        on = self.settings.get('on')
-        if(on is not None):
+        on = self.settings.get('on', '')
+        if(not on == ''):
             def f(x):
                 d = pd.Series(str(x).split(on, 1))
                 return d

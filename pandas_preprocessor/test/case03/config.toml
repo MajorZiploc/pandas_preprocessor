@@ -25,6 +25,9 @@ algo = "trim"
 algo = "ltrim"
 [[dataframe.inputs.preprocess_steps]]
 algo = "rtrim"
+[[dataframe.inputs.preprocess_steps]]
+algo = "prefix"
+settings.value = "Mr. "
 
 [[dataframe.outputs]]
 name = "calories"

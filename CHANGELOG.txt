@@ -85,3 +85,4 @@ Change Log
   Adds add preprocessor
   Adds mult preprocessor
   Adds div_by preprocessor
+  Adds trim, rtrim, ltrim preprocessors

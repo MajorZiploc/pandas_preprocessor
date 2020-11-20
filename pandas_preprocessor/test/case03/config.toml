@@ -14,6 +14,18 @@ name = "date"
 algo = "date_to_ordinal"
 settings.date_format = "%m/%d/%y"
 
+[[dataframe.inputs]]
+name = "muscle_mass_percentage"
+[[dataframe.inputs.preprocess_steps]]
+algo = "to_type"
+settings.type = "str"
+[[dataframe.inputs.preprocess_steps]]
+algo = "trim"
+[[dataframe.inputs.preprocess_steps]]
+algo = "ltrim"
+[[dataframe.inputs.preprocess_steps]]
+algo = "rtrim"
+
 [[dataframe.outputs]]
 name = "calories"
 settings.date_format = "integer"

@@ -23,6 +23,9 @@ from pandas_preprocessor.preprocessors.abs import Abs
 from pandas_preprocessor.preprocessors.add import Add
 from pandas_preprocessor.preprocessors.mult import Mult
 from pandas_preprocessor.preprocessors.div_by import DivBy
+from pandas_preprocessor.preprocessors.ltrim import LTrim
+from pandas_preprocessor.preprocessors.rtrim import RTrim
+from pandas_preprocessor.preprocessors.trim import Trim
 
 preprocessors = {
     'substitution': lambda column, dataframe, settings: Substitution(column, dataframe, settings),
@@ -48,7 +51,10 @@ preprocessors = {
     'abs': lambda column, dataframe, settings: Abs(column, dataframe, settings),
     'add': lambda column, dataframe, settings: Add(column, dataframe, settings),
     'mult': lambda column, dataframe, settings: Mult(column, dataframe, settings),
-    'div_by': lambda column, dataframe, settings: DivBy(column, dataframe, settings)
+    'div_by': lambda column, dataframe, settings: DivBy(column, dataframe, settings),
+    'ltrim': lambda column, dataframe, settings: LTrim(column, dataframe, settings),
+    'rtrim': lambda column, dataframe, settings: RTrim(column, dataframe, settings),
+    'trim': lambda column, dataframe, settings: Trim(column, dataframe, settings)
 }
 
 

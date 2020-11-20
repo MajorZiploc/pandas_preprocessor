@@ -19,13 +19,18 @@ settings.column1 = "bf1"
 settings.column2 = "bf2"
 
 [[dataframe.inputs]]
+name = "muscle_mass_percentage"
+[[dataframe.inputs.preprocess_steps]]
+algo = "to_type"
+settings.type = "str"
+
+[[dataframe.inputs]]
 name = "date"
 [[dataframe.inputs.preprocess_steps]]
-algo = "date_to_ordinal"
-settings.date_format = "%m/%d/%y"
-[[dataframe.inputs.preprocess_steps]]
-algo = "to_num"
-settings.type = "integer"
+algo = "join_columns"
+settings.on = ""
+settings.other_column = "muscle_mass_percentage"
+settings.new_column = "merged"
 
 [[dataframe.outputs]]
 name = "morning_weight"

@@ -31,6 +31,7 @@ from pandas_preprocessor.preprocessors.suffix import Suffix
 from pandas_preprocessor.preprocessors.keep import Keep
 from pandas_preprocessor.preprocessors.remove import Remove
 from pandas_preprocessor.preprocessors.split_column import SplitColumn
+from pandas_preprocessor.preprocessors.join_columns import JoinColumns
 
 preprocessors = {
     'substitution': Substitution,
@@ -64,7 +65,8 @@ preprocessors = {
     'suffix': Suffix,
     'keep': Keep,
     'remove': Remove,
-    'split_column': SplitColumn
+    'split_column': SplitColumn,
+    'join_columns': JoinColumns
 }
 
 

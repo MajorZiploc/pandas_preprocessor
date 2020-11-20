@@ -98,3 +98,4 @@ Change Log
 
 0.3.0
   Adds split_column preprocessor
+  Adds join_column preprocessor

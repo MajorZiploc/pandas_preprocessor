@@ -6,36 +6,30 @@ input_query.format = "csv"
 
 model_file_location = "pickles/model.pkl"
 
-dataframe.keep_other_columns = true
+dataframe.keep_other_columns = false
+
+[[dataframe.inputs]]
+name = "body_fat_percentage"
+[[dataframe.inputs.preprocess_steps]]
+algo = "mv_drop"
+[[dataframe.inputs.preprocess_steps]]
+algo = "split_column"
+settings.on = "."
+settings.column1 = "bf1"
+settings.column2 = "bf2"
 
 [[dataframe.inputs]]
 name = "date"
 [[dataframe.inputs.preprocess_steps]]
 algo = "date_to_ordinal"
 settings.date_format = "%m/%d/%y"
-
-[[dataframe.inputs]]
-name = "muscle_mass_percentage"
 [[dataframe.inputs.preprocess_steps]]
-algo = "mv_drop"
-[[dataframe.inputs.preprocess_steps]]
-algo = "to_type"
-settings.type = "str"
-[[dataframe.inputs.preprocess_steps]]
-algo = "remove"
-settings.pattern = "[a-z]"
+algo = "to_num"
+settings.type = "integer"
 
 [[dataframe.outputs]]
-name = "calories"
-settings.date_format = "integer"
+name = "morning_weight"
 [[dataframe.outputs.preprocess_steps]]
 algo = "abs"
 [[dataframe.outputs.preprocess_steps]]
-algo = "add"
-settings.value = 2
-[[dataframe.outputs.preprocess_steps]]
-algo = "mult"
-settings.value = 2
-[[dataframe.outputs.preprocess_steps]]
-algo = "div_by"
-settings.value = 2
+algo = "mv_drop"

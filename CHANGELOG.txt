@@ -97,3 +97,4 @@ Change Log
   Fixes passing of refreshed settings to encoders and preprocessors
 
 0.3.0
+  Adds split_column preprocessor

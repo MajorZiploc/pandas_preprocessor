@@ -28,6 +28,9 @@ algo = "rtrim"
 [[dataframe.inputs.preprocess_steps]]
 algo = "prefix"
 settings.value = "Mr. "
+[[dataframe.inputs.preprocess_steps]]
+algo = "suffix"
+settings.value = " jr"
 
 [[dataframe.outputs]]
 name = "calories"

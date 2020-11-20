@@ -87,3 +87,4 @@ Change Log
   Adds div_by preprocessor
   Adds trim, rtrim, ltrim preprocessors
   Adds prefix preprocessor
+  Adds suffix preprocessor

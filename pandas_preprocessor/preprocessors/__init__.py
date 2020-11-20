@@ -27,6 +27,7 @@ from pandas_preprocessor.preprocessors.ltrim import LTrim
 from pandas_preprocessor.preprocessors.rtrim import RTrim
 from pandas_preprocessor.preprocessors.trim import Trim
 from pandas_preprocessor.preprocessors.prefix import Prefix
+from pandas_preprocessor.preprocessors.suffix import Suffix
 
 preprocessors = {
     'substitution': lambda column, dataframe, settings: Substitution(column, dataframe, settings),
@@ -56,7 +57,8 @@ preprocessors = {
     'ltrim': lambda column, dataframe, settings: LTrim(column, dataframe, settings),
     'rtrim': lambda column, dataframe, settings: RTrim(column, dataframe, settings),
     'trim': lambda column, dataframe, settings: Trim(column, dataframe, settings),
-    'prefix': lambda column, dataframe, settings: Prefix(column, dataframe, settings)
+    'prefix': lambda column, dataframe, settings: Prefix(column, dataframe, settings),
+    'suffix': lambda column, dataframe, settings: Suffix(column, dataframe, settings)
 }
 
 

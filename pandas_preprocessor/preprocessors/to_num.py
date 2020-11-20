@@ -11,6 +11,9 @@ class ToNum(APreprocessor):
         ty = self.settings.get('type')
         dataframe[self.column] = pd.to_numeric(
             dataframe[self.column], downcast=ty)
+        # Look into using the below
+        # convert just columns "a" and "b"
+        # df[["a", "b"]] = df[["a", "b"]].apply(pd.to_numeric)
         return dataframe
 
     def invert_transform(self, dataframe):

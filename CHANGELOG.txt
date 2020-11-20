@@ -94,3 +94,4 @@ Change Log
   Adds remove preprocessor
 
 0.2.9
+  Fixes passing of refreshed settings to encoders and preprocessors

@@ -25,7 +25,7 @@ class DFCleaningHelper(object):
             settings = step.get('settings', {})
             settings['is_use_case'] = self.is_use_case
             step['encoder'] = encoder_selector(
-                step['algo'])(column['name'], df, step.get('settings'))
+                step['algo'])(column['name'], df, settings)
 
     def encoderTransform(self, df, step):
         if(step is not None):
@@ -60,7 +60,7 @@ class DFCleaningHelper(object):
             settings = step.get('settings', {})
             settings['is_use_case'] = self.is_use_case
             step['preprocessor'] = preprocessor_selector(
-                step['algo'])(column['name'], df, step.get('settings'))
+                step['algo'])(column['name'], df, settings)
 
     def preprocessorTransform(self, df, step):
         if(step is not None):

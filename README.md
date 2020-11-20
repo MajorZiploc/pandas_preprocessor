@@ -34,6 +34,7 @@ packages=find_packages(include=['pandas_preprocessor', 'pandas_preprocessor.*'])
 - Add split_on preprocessor which takes a column and splits it into two based on some string
 - Resolve regex issues with regex using preprocessors
 - SettingWithCopyWarning: trim preprocessors and suffix and prefix have a dataframe copy problem
+- Add lt, lte, eq, neq, gt, gte preprocessors
 
 # Notes on Publishing
 

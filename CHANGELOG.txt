@@ -95,3 +95,5 @@ Change Log
 
 0.2.9
   Fixes passing of refreshed settings to encoders and preprocessors
+
+0.3.0

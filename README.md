@@ -31,11 +31,10 @@ packages=find_packages(include=['pandas_preprocessor', 'pandas_preprocessor.*'])
 - Improve project documentation that shows on pypi and github page
 - Stacking encoders can lead to strange problems!!!! labelencoder has a problem when the indices dont come in order. example: if some are droped by mv_drop
 - Add minus preprocessor
-- Add prefix and suffix preprocessors
 - Add split_on preprocessor which takes a column and splits it into two based on some string
 - Add filter preprocessor. Keeps values of a certain form.. name: keep and remove . might want regex versions and others
 - Resolve regex issues with regex using preprocessors
-- trim preprocessors and suffix and prefix have a dataframe copy problem
+- SettingWithCopyWarning: trim preprocessors and suffix and prefix have a dataframe copy problem
 
 # Notes on Publishing
 

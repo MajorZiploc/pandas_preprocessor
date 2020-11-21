@@ -2,10 +2,11 @@ from sklearn import preprocessing
 from pandas_preprocessor.preprocessors.apreprocessor import APreprocessor
 import pandas as pd
 
-# NOTE: invert_transform not supported
-
 
 class PolynomialFeatures(APreprocessor):
+    """
+    NOTE: invert_transform not supported
+    """
 
     def __init__(self, column, dataframe, settings):
         APreprocessor.__init__(self, column, dataframe, settings)

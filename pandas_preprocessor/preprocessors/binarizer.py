@@ -2,10 +2,11 @@ from sklearn import preprocessing
 from pandas_preprocessor.encoders.aencoder import AEncoder
 import pandas as pd
 
-# NOTE: invert_transform not supported
-
 
 class Binarizer(AEncoder):
+    """
+    NOTE: invert_transform not supported
+    """
 
     def __init__(self, column, dataframe, settings):
         AEncoder.__init__(self, column, dataframe, settings)

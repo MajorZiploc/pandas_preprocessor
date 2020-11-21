@@ -100,3 +100,4 @@ Change Log
   Adds split_column preprocessor
   Adds join_column preprocessor
   Adds drop_column preprocessor
+  Adds rename_column preprocessor

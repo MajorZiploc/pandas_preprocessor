@@ -3,7 +3,13 @@ data.format = "csv"
 
 model_file_location = "pickles/model.pkl"
 
-dataframe.keep_other_columns = false
+dataframe.keep_other_columns = true
+
+[[dataframe.inputs]]
+name = "Fairy"
+ftype = "category"
+[[dataframe.inputs.preprocess_steps]]
+algo = "drop_column"
 
 [[dataframe.inputs]]
 name = "Fire"

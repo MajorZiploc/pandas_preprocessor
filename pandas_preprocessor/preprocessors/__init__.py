@@ -32,6 +32,7 @@ from pandas_preprocessor.preprocessors.keep import Keep
 from pandas_preprocessor.preprocessors.remove import Remove
 from pandas_preprocessor.preprocessors.split_column import SplitColumn
 from pandas_preprocessor.preprocessors.join_columns import JoinColumns
+from pandas_preprocessor.preprocessors.drop_column import DropColumn
 
 preprocessors = {
     'substitution': Substitution,
@@ -66,7 +67,8 @@ preprocessors = {
     'keep': Keep,
     'remove': Remove,
     'split_column': SplitColumn,
-    'join_columns': JoinColumns
+    'join_columns': JoinColumns,
+    'drop_column': DropColumn
 }
 
 

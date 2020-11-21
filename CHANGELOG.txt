@@ -101,3 +101,5 @@ Change Log
   Adds join_column preprocessor
   Adds drop_column preprocessor
   Adds rename_column preprocessor
+
+0.3.1

@@ -8,9 +8,9 @@ class MvMean(APreprocessor):
 
     def __init__(self, column, dataframe, settings):
         APreprocessor.__init__(self, column, dataframe, settings)
+        self.mean = dataframe[self.column].mean()
 
     def transform(self, dataframe):
         if(not settings.get('is_use_case', False)):
-            x = dataframe[self.column].mean()
-            dataframe[self.column] = dataframe[self.column].fillna(x)
+            dataframe[self.column] = dataframe[self.column].fillna(self.mean)
         return dataframe

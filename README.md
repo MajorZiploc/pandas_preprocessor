@@ -35,6 +35,7 @@ packages=find_packages(include=['pandas_preprocessor', 'pandas_preprocessor.*'])
 - Resolve regex issues with regex using preprocessors
 - SettingWithCopyWarning: trim preprocessors and suffix and prefix have a dataframe copy problem
 - Add lt, lte, eq, neq, gt, gte preprocessors
+- rework missing value preprocessors to pickle them
 
 # Notes on Publishing
 

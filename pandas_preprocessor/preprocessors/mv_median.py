@@ -8,9 +8,9 @@ class MvMedian(APreprocessor):
 
     def __init__(self, column, dataframe, settings):
         APreprocessor.__init__(self, column, dataframe, settings)
+        self.median = dataframe[self.column].median()
 
     def transform(self, dataframe):
         if(not self.settings.get('is_use_case', False)):
-            x = dataframe[self.column].median()
-            dataframe[self.column] = dataframe[self.column].fillna(x)
+            dataframe[self.column] = dataframe[self.column].fillna(self.median)
         return dataframe
